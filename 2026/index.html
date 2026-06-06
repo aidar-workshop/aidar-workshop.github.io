@@ -1,0 +1,255 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>AIDaR: AI Data Readiness for Scientific Discovery</title>
+    <meta
+      name="description"
+      content="AIDaR is a NeurIPS 2026 workshop on AI data readiness, scientific data infrastructure, and evaluations for reliable scientific AI systems."
+    >
+    <link rel="stylesheet" href="styles.css">
+  </head>
+  <body>
+    <main class="page">
+      <header class="hero" id="top">
+        <p class="kicker">NeurIPS 2026 Workshop</p>
+        <h1>AIDaR: AI Data Readiness for Scientific Discovery</h1>
+        <p class="tagline">Data Infrastructure and Benchmarks for Reliable Scientific AI Systems.</p>
+        <div class="meta">
+          <span>One-day in-person workshop</span>
+          <span>CFP launch: July 2026</span>
+          <span>Submission deadline: August 2026</span>
+          <span>Workshop: December 2026</span>
+        </div>
+        <nav class="quick-links" aria-label="Page sections">
+          <a href="#topics">Topics</a>
+          <a href="#cfp">Call for papers</a>
+          <a href="#dates">Dates</a>
+          <a href="#speakers">Speakers</a>
+          <a href="#schedule">Schedule</a>
+          <a href="#organizers">Organizers</a>
+        </nav>
+      </header>
+
+      <section class="abstract-block" id="abstract">
+        <h2>Overview</h2>
+        <p>
+          Scientific AI is moving from curated prediction tasks toward systems
+          that work directly with experimental data. Foundation models,
+          retrieval systems, and agents are being asked to use experimental data,
+          query scientific knowledge, run analyses, and support follow-up
+          decisions. Scientific data must remain connected to samples, assays,
+          protocols, measurements, workflow outputs, and the context needed to
+          interpret results outside the lab or notebook where the data was
+          produced.
+        </p>
+        <p>
+          AIDaR focuses on two problems in this transition. First, how should
+          scientific data be organized so models and agents can use it: from raw
+          measurements and analysis-ready files to relational or graph-structured
+          knowledge, multimodal biomedical measurements, workflow systems, and
+          large industrial datasets used for model training and wet-lab feedback?
+          Second, how should evaluations determine where frontier models are
+          reliable: across biological reasoning, practical data analysis,
+          retrieval over structured scientific knowledge, assay-specific
+          workflows, and deployed scientific AI systems?
+        </p>
+        <p>
+          AIDaR brings together researchers, industry scientists, and engineers
+          building scientific data systems, foundation models, agents,
+          biomedical evaluations, and industrial assay platforms.
+        </p>
+      </section>
+
+      <section class="people-block" id="speakers" aria-label="Speakers and panelists">
+        <div class="people-group">
+          <h2>Invited speakers</h2>
+          <div class="people-strip invited">
+            <figure>
+              <img src="assets/speakers/max-welling.jpg" alt="Max Welling">
+              <figcaption><strong>Max Welling</strong><span>University of Amsterdam</span></figcaption>
+            </figure>
+            <figure>
+              <img src="assets/speakers/jure-leskovec.jpg" alt="Jure Leskovec">
+              <figcaption><strong>Jure Leskovec</strong><span>Stanford University</span></figcaption>
+            </figure>
+            <figure>
+              <img src="assets/speakers/marianna-rapsomaniki.webp" alt="Marianna Rapsomaniki">
+              <figcaption><strong>Marianna Rapsomaniki</strong><span>University of Lausanne</span></figcaption>
+            </figure>
+            <figure>
+              <img src="assets/speakers/chloe-agathe-azencott.png" alt="Chloe-Agathe Azencott">
+              <figcaption><strong>Chloe-Agathe Azencott</strong><span>Mines Paris-PSL</span></figcaption>
+            </figure>
+          </div>
+        </div>
+
+        <div class="people-group">
+          <h2>Panelists</h2>
+          <div class="people-strip panelists">
+            <figure>
+              <img src="assets/panelists/harihara-muralidharan.jpg" alt="Harihara Muralidharan">
+              <figcaption><strong>Harihara Muralidharan</strong><span>LatchBio</span></figcaption>
+            </figure>
+            <figure>
+              <img src="assets/panelists/kexin-huang.jpg" alt="Kexin Huang">
+              <figcaption><strong>Kexin Huang</strong><span>Phylo</span></figcaption>
+            </figure>
+            <figure>
+              <img src="assets/panelists/pablo-meyer-rojas.jpg" alt="Pablo Meyer Rojas">
+              <figcaption><strong>Pablo Meyer Rojas</strong><span>IBM Research / DREAM</span></figcaption>
+            </figure>
+            <figure>
+              <img src="assets/panelists/jon-laurent.webp" alt="Jon Laurent">
+              <figcaption><strong>Jon Laurent</strong><span>Edison Scientific</span></figcaption>
+            </figure>
+            <figure>
+              <img src="assets/panelists/hoifung-poon.jpeg" alt="Hoifung Poon">
+              <figcaption><strong>Hoifung Poon</strong><span>Microsoft Research</span></figcaption>
+            </figure>
+            <figure>
+              <img src="assets/panelists/jason-fries.png" alt="Jason Fries">
+              <figcaption><strong>Jason Fries</strong><span>Stanford University</span></figcaption>
+            </figure>
+          </div>
+        </div>
+      </section>
+
+      <section class="section two-col" id="topics">
+        <div>
+          <h2>Workshop topics</h2>
+          <h3>Data infrastructure for scientific AI</h3>
+          <p>
+            Scientific data must move from raw measurements into forms that
+            models, retrieval systems, and agents can use. This includes linking
+            files to samples and assay conditions, preserving the steps that
+            produced an analysis-ready dataset, representing scientific
+            relationships as tables, graphs, or knowledge networks, and exposing
+            data through tools that scientists and agents can both use.
+          </p>
+          <p>
+            Topics include scientific foundation models, relational and
+            graph-structured data, multimodal biomedical measurements, workflow
+            systems, and large industrial datasets used for model training and
+            wet-lab feedback.
+          </p>
+        </div>
+        <div>
+          <h2 class="spacer">Workshop topics</h2>
+          <h3>Evaluations for scientific AI</h3>
+          <p>
+            Scientific AI systems should be tested on tasks that resemble real
+            scientific work: choosing inputs, running analyses, checking controls,
+            interpreting noisy results, and recovering biological or physical
+            conclusions from data.
+          </p>
+          <p>
+            Topics include biological reasoning, practical data analysis,
+            retrieval over structured scientific knowledge, multimodal biomedical
+            data, failure analysis, and studies of where performance changes
+            across assays, platforms, workflows, or data organization.
+          </p>
+        </div>
+      </section>
+
+      <section class="section two-col" id="cfp">
+        <div>
+          <h2>Call for papers</h2>
+          <p>
+            <strong>Submissions.</strong> We invite technical papers, benchmark
+            and evaluation work, data-system reports, workflow and tool demos,
+            and failure analyses.
+          </p>
+          <p>
+            <strong>What to show.</strong> Submissions should connect data
+            organization or evaluation design to downstream model or agent
+            behavior in scientific tasks.
+          </p>
+          <ul class="key-list">
+            <li><strong>Data infrastructure:</strong> AI-operable experimental data, graph-structured scientific knowledge, multimodal biomedical measurements, workflow systems, and large industrial datasets.</li>
+            <li><strong>Evaluations:</strong> biological reasoning, practical data analysis, retrieval, agent tasks, assay-specific workflows, and deployed scientific AI systems.</li>
+          </ul>
+        </div>
+        <div id="dates">
+          <h2>Important dates</h2>
+          <table class="dates-table">
+            <tbody>
+              <tr><td>Website and CFP launch</td><td>July 2026</td></tr>
+              <tr><td>Submission deadline</td><td>August 2026</td></tr>
+              <tr><td>Review and notifications</td><td>September 2026</td></tr>
+              <tr><td>Final materials and schedule</td><td>October 2026</td></tr>
+              <tr><td>Workshop</td><td>December 2026</td></tr>
+            </tbody>
+          </table>
+          <p>
+            Exact dates, submission format, and OpenReview link will be posted
+            with the CFP.
+          </p>
+        </div>
+      </section>
+
+      <section class="section" id="schedule">
+        <h2>Tentative schedule</h2>
+        <table>
+          <tbody>
+            <tr><td>08:45</td><td>Arrival, question wall, opening remarks, COI/LLM policies, and workshop topics.</td></tr>
+            <tr><td>09:10</td><td>Invited talks: Max Welling and Jure Leskovec. AI-operable data for foundation models, discovery platforms, relational data, and structured scientific knowledge.</td></tr>
+            <tr><td>10:30</td><td>Contributed spotlights: scientific data systems and practical evaluations.</td></tr>
+            <tr><td>11:20</td><td>Panel 1: Benchmarking AI on practical biology. Evaluations that approximate biological reasoning and practical data-analysis tasks.</td></tr>
+            <tr><td>12:00</td><td>Poster/demo session 1 and lunch.</td></tr>
+            <tr><td>13:15</td><td>Invited talks: Marianna Rapsomaniki and Chloe-Agathe Azencott. Biomedical data, assay design, sample context, treatment conditions, multimodal measurements, biological signal, and reproducibility.</td></tr>
+            <tr><td>14:00</td><td>Contributed spotlights: analysis histories and deployment lessons.</td></tr>
+            <tr><td>14:50</td><td>Poster/demo session 2 and coffee.</td></tr>
+            <tr><td>15:40</td><td>Breakout groups: AI-facing data infrastructure for large industrial datasets.</td></tr>
+            <tr><td>16:25</td><td>Panel 2: Engineering AI-operable assay data systems. Hoifung Poon, Jason Fries, and industry panelists discuss sample metadata, raw instrument data, analysis-ready files, workflow inputs and outputs, version history, and scientist-facing interfaces.</td></tr>
+            <tr><td>17:05</td><td>Breakout report-out, community roadmap, closing remarks, and post-workshop report plan.</td></tr>
+          </tbody>
+        </table>
+
+        <div class="program-grid" id="program">
+          <p><strong>Format.</strong> Short invited talks, central contributed work, poster/demo sessions, and breakout groups that produce short written outputs for the post-workshop report.</p>
+          <p><strong>Speakers.</strong> Max Welling and Jure Leskovec open with AI-operable scientific data systems; Marianna Rapsomaniki and Chloe-Agathe Azencott ground the evaluation discussions in biomedical data.</p>
+          <p><strong>Panels.</strong> Panel 1 focuses on practical biology evaluations. Panel 2 focuses on assay data systems: sample metadata, raw instrument data, analysis-ready files, workflow inputs and outputs, version history, and scientist-facing interfaces.</p>
+          <p><strong>Breakouts.</strong> Breakouts focus on large perturbation datasets, multiplexed in vivo screens, tissue-foundry systems, model training, and wet-lab feedback, with expected participation from ManifoldBio, Polyphron, and LigandAI.</p>
+        </div>
+      </section>
+
+      <section class="section organizer-section" id="organizers">
+        <h2>Organizers</h2>
+        <div class="people-strip organizers">
+          <figure>
+            <img src="assets/organizers/michal-rosen-zvi.jpg" alt="Michal Rosen-Zvi">
+            <figcaption><strong>Michal Rosen-Zvi</strong><span>Hebrew University / IBM Research</span></figcaption>
+          </figure>
+          <figure>
+            <img src="assets/organizers/zoe-piran.jpg" alt="Zoe Piran">
+            <figcaption><strong>Zoe Piran</strong><span>Stanford / Roche / Genentech</span></figcaption>
+          </figure>
+          <figure>
+            <img src="assets/organizers/kenny-workman.jpg" alt="Kenny Workman">
+            <figcaption><strong>Kenny Workman</strong><span>LatchBio</span></figcaption>
+          </figure>
+          <figure>
+            <img src="assets/organizers/edaeni-hamid.jpg" alt="Edaeni Hamid">
+            <figcaption><strong>Edaeni Hamid</strong><span>Roche / Genentech</span></figcaption>
+          </figure>
+          <figure>
+            <img src="assets/organizers/vladimir-ermakov.png" alt="Vladimir Ermakov">
+            <figcaption><strong>Vladimir Ermakov</strong><span>Edison Scientific</span></figcaption>
+          </figure>
+          <figure>
+            <img src="assets/organizers/arindam-sett.jpg" alt="Arindam Sett">
+            <figcaption><strong>Arindam Sett</strong><span>Roche / Genentech</span></figcaption>
+          </figure>
+          <figure>
+            <img src="assets/organizers/sina-booeshaghi.webp" alt="Sina Booeshaghi">
+            <figcaption><strong>Sina Booeshaghi</strong><span>UC Berkeley</span></figcaption>
+          </figure>
+        </div>
+      </section>
+    </main>
+
+    <footer>AIDaR @ NeurIPS 2026</footer>
+  </body>
+</html>
