@@ -20,45 +20,77 @@
           <span>One-day in-person workshop</span>
           <span>Paris, France</span>
           <span>December 12 or 13, 2026</span>
-          <span>Submission deadline: August 29, 2026 (AoE)</span>
         </div>
         <nav class="quick-links" aria-label="Page sections">
-          <a href="#topics">Topics</a>
-          <a href="#cfp">Call for papers</a>
           <a href="#dates">Dates</a>
           <a href="#speakers">Speakers</a>
+          <a href="#topics">Topics</a>
+          <a href="#cfp">Call for papers</a>
           <a href="#schedule">Schedule</a>
           <a href="#organizers">Organizers</a>
         </nav>
       </header>
 
+      <section class="section key-dates" id="dates">
+        <h2>Key dates</h2>
+        <div class="date-grid">
+          <div>
+            <span class="date-label">Submission</span>
+            <span class="date-value">August 29, 2026</span>
+            <span class="date-sub">11:59 p.m. AoE</span>
+          </div>
+          <div>
+            <span class="date-label">Notification</span>
+            <span class="date-value">September 29, 2026</span>
+            <span class="date-sub">11:59 p.m. AoE</span>
+          </div>
+          <div>
+            <span class="date-label">Camera-ready</span>
+            <span class="date-value">To be announced</span>
+          </div>
+          <div>
+            <span class="date-label">Workshop</span>
+            <span class="date-value">December 12 or 13, 2026</span>
+            <span class="date-sub">Paris, France</span>
+          </div>
+        </div>
+        <p class="dates-note">
+          Dates are tentative; the workshop day in Paris will be confirmed once
+          provided.
+        </p>
+        <div class="cfp-cta">
+          <a class="button" href="#">Submit on OpenReview</a>
+        </div>
+      </section>
+
       <section class="abstract-block" id="abstract">
         <h2>Overview</h2>
         <p>
-          Scientific AI is moving from curated prediction tasks toward systems
-          that work directly with experimental data. Foundation models,
-          retrieval systems, and agents are being asked to use experimental data,
-          query scientific knowledge, run analyses, and support follow-up
-          decisions. Scientific data must remain connected to samples, assays,
-          protocols, measurements, workflow outputs, and the context needed to
-          interpret results outside the lab or notebook where the data was
-          produced.
+          Scientific AI is moving from curated prediction tasks toward
+          <strong>systems that work directly with experimental data</strong>.
+          Foundation models, retrieval systems, and agents are being asked to use
+          experimental data, query scientific knowledge, run analyses, and
+          support follow-up decisions. <strong>Scientific data must remain
+          connected to samples, assays, protocols, measurements, workflow
+          outputs, and the context needed to interpret results</strong> outside
+          the lab or notebook where the data was produced.
         </p>
         <p>
-          AIDaR focuses on two problems in this transition. First, how should
-          scientific data be organized so models and agents can use it: from raw
-          measurements and analysis-ready files to relational or graph-structured
-          knowledge, multimodal biomedical measurements, workflow systems, and
-          large industrial datasets used for model training and wet-lab feedback?
-          Second, how should evaluations determine where frontier models are
-          reliable: across biological reasoning, practical data analysis,
-          retrieval over structured scientific knowledge, assay-specific
-          workflows, and deployed scientific AI systems?
+          AIDaR focuses on <strong>two problems</strong> in this transition.
+          First, <strong>how should scientific data be organized so models and
+          agents can use it</strong>: from raw measurements and analysis-ready
+          files to relational or graph-structured knowledge, multimodal
+          biomedical measurements, workflow systems, and large industrial
+          datasets used for model training and wet-lab feedback? Second,
+          <strong>how should evaluations determine where frontier models are
+          reliable</strong>: across biological reasoning, practical data
+          analysis, retrieval over structured scientific knowledge,
+          assay-specific workflows, and deployed scientific AI systems?
         </p>
         <p>
-          AIDaR brings together researchers, industry scientists, and engineers
-          building scientific data systems, foundation models, agents,
-          biomedical evaluations, and industrial assay platforms.
+          AIDaR brings together <strong>researchers, industry scientists, and
+          engineers</strong> building scientific data systems, foundation models,
+          agents, biomedical evaluations, and industrial assay platforms.
         </p>
       </section>
 
@@ -113,23 +145,22 @@
 
       <section class="section" id="cfp">
         <h2>Call for papers</h2>
-        <div class="callout" role="note">
-          <p class="callout-title">We accept short and full papers.</p>
-          <p>
-            Short papers may use up to 4 pages and full papers up to 8 pages,
-            in both cases excluding references and appendices. Submissions are
-            due August 29, 2026 (Anywhere on Earth). The submission portal and
-            LaTeX template will be posted with the call.
-          </p>
-        </div>
+        <p class="cfp-lead">
+          We welcome <strong>short papers (up to 4 pages)</strong> and
+          <strong>full papers (up to 8 pages)</strong>, excluding references and
+          appendices.
+        </p>
+        <p class="cfp-submit-link">
+          <a href="#">Submit on OpenReview</a>
+        </p>
         <div class="two-col">
           <div>
             <h3>What to submit</h3>
             <p>
-              We invite technical papers, benchmark and evaluation work,
+              We invite technical papers, benchmarks and evaluations,
               data-system reports, workflow and tool demos, and failure analyses.
               Submissions should connect data organization or evaluation design
-              to downstream model or agent behavior in scientific tasks.
+              to downstream model or agent behavior on scientific tasks.
             </p>
             <p>
               <strong>Full papers (up to 8 pages)</strong> present complete work:
@@ -138,37 +169,29 @@
             </p>
             <p>
               <strong>Short papers (up to 4 pages)</strong> present focused
-              contributions, works in progress, position pieces, or tool and
+              contributions, work in progress, position pieces, or tool and
               dataset demos.
             </p>
+          </div>
+          <div>
+            <h3>Topics of interest</h3>
             <ul class="key-list">
               <li><strong>Data infrastructure:</strong> AI-operable experimental data, graph-structured scientific knowledge, multimodal biomedical measurements, workflow systems, and large industrial datasets.</li>
               <li><strong>Evaluations:</strong> biological reasoning, practical data analysis, retrieval, agent tasks, assay-specific workflows, and deployed scientific AI systems.</li>
             </ul>
-            <h3>Formatting and review</h3>
-            <ul class="key-list">
-              <li>Use the workshop LaTeX template, to be posted with the call.</li>
-              <li>Submit on OpenReview, with the portal link to be posted. Reviewing is double-blind, so submissions and any linked material must preserve anonymity.</li>
-              <li>References and appendices do not count toward the page limit; reviewers are not required to read appendices.</li>
-              <li>Disclose any use of large language models with a short paragraph describing their role.</li>
-              <li>Accepted papers appear on OpenReview. The workshop is non-archival, and concurrent submissions are welcome where the other venue allows it.</li>
-            </ul>
           </div>
-          <div id="dates">
-            <h2>Important dates</h2>
-            <table class="dates-table">
-              <tbody>
-                <tr><td>Submission deadline</td><td>August 29, 2026 (AoE)</td></tr>
-                <tr><td>Notification</td><td>September 29, 2026 (AoE)</td></tr>
-                <tr><td>Camera-ready and final schedule</td><td>To be posted</td></tr>
-                <tr><td>Workshop</td><td>December 12 or 13, 2026, Paris, France</td></tr>
-              </tbody>
-            </table>
-            <p>
-              Dates are tentative. All deadlines are 11:59 p.m. Anywhere on Earth
-              (AoE). The exact workshop day in Paris will be confirmed with the
-              final schedule.
-            </p>
+        </div>
+        <div class="cfp-formatting">
+          <h3>Formatting and review</h3>
+          <div class="two-col">
+            <ul class="key-list">
+              <li>Papers must use the <a href="https://neurips.cc/Conferences/2026/CallForPapers">NeurIPS 2026 style files</a>; references and appendices are excluded from the page limit.</li>
+              <li>Reviewing is double-blind; anonymize the submission and any linked material.</li>
+            </ul>
+            <ul class="key-list">
+              <li>Disclose any use of large language models and their role.</li>
+              <li>The workshop is non-archival.</li>
+            </ul>
           </div>
         </div>
       </section>
@@ -234,6 +257,16 @@
       </section>
     </main>
 
-    <footer>AIDaR at NeurIPS 2026</footer>
+    <footer>
+      <p class="footer-contact">
+        <a href="mailto:aidar.neurips.2026.paris@gmail.com">aidar.neurips.2026.paris@gmail.com</a>
+      </p>
+      <p class="footer-links">
+        <a href="https://www.linkedin.com/in/aidar-neurips-workshop-paris-672b50424/">LinkedIn</a>
+        <a href="https://x.com/aidarneurips26p">X</a>
+        <a href="https://bsky.app/profile/aidar-neurips2026.bsky.social">Bluesky</a>
+      </p>
+      <p>AIDaR at NeurIPS 2026</p>
+    </footer>
   </body>
 </html>

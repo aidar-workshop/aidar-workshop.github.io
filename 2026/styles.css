@@ -245,27 +245,90 @@ ul {
   text-align: center;
 }
 
-.callout {
-  margin: 0 0 1rem;
-  padding: 0.7rem 0.9rem;
-  border: 1px solid var(--line);
-  border-left: 3px solid var(--accent);
-  border-radius: 8px;
-  background: var(--wash);
+.date-grid {
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  gap: 1rem 1.25rem;
+  margin: 0.4rem 0 0.55rem;
+  padding-top: 0.6rem;
+  border-top: 1px solid var(--line);
 }
 
-.callout p {
-  margin-bottom: 0.35rem;
+.date-grid > div {
+  display: flex;
+  flex-direction: column;
+  gap: 0.14rem;
 }
 
-.callout p:last-child {
-  margin-bottom: 0;
-}
-
-.callout-title {
-  color: var(--ink);
+.date-label {
   font-family: ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+  font-size: 0.66rem;
   font-weight: 700;
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
+  color: var(--accent);
+}
+
+.date-value {
+  font-size: 1rem;
+  color: var(--ink);
+}
+
+.date-sub {
+  font-family: ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+  font-size: 0.72rem;
+  color: var(--muted);
+}
+
+.cfp-cta {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 0.7rem;
+  margin-top: 0.9rem;
+  text-align: center;
+}
+
+.cfp-lead {
+  margin: 0 0 0.35rem;
+}
+
+.cfp-submit-link {
+  margin: 0 0 1rem;
+  font-family: ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+  font-size: 0.85rem;
+  font-weight: 700;
+}
+
+.cfp-formatting {
+  margin-top: 1.1rem;
+}
+
+.button {
+  display: inline-block;
+  padding: 0.5rem 1.05rem;
+  border-radius: 6px;
+  background: var(--accent);
+  color: #fff;
+  font-family: ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+  font-size: 0.82rem;
+  font-weight: 700;
+  text-decoration: none;
+}
+
+.button:hover {
+  background: #26595c;
+}
+
+.dates-note {
+  margin-top: 0.4rem;
+  color: var(--muted);
+  font-size: 0.85rem;
+}
+
+a {
+  color: var(--accent);
 }
 
 .section {
@@ -343,10 +406,26 @@ footer {
   text-align: center;
 }
 
+footer p {
+  margin: 0 0 0.3rem;
+}
+
+footer p:last-child {
+  margin-bottom: 0;
+}
+
+.footer-links a + a {
+  margin-left: 0.9rem;
+}
+
 @media (max-width: 780px) {
   .two-col,
   .program-grid {
     grid-template-columns: 1fr;
+  }
+
+  .date-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
   }
 
   .people-strip.invited,
