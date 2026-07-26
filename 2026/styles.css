@@ -237,6 +237,37 @@ ul {
   text-transform: uppercase;
 }
 
+.tba {
+  margin: 0.1rem 0 0;
+  color: var(--muted);
+  font-family: ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+  font-size: 0.85rem;
+  text-align: center;
+}
+
+.callout {
+  margin: 0 0 1rem;
+  padding: 0.7rem 0.9rem;
+  border: 1px solid var(--line);
+  border-left: 3px solid var(--accent);
+  border-radius: 8px;
+  background: var(--wash);
+}
+
+.callout p {
+  margin-bottom: 0.35rem;
+}
+
+.callout p:last-child {
+  margin-bottom: 0;
+}
+
+.callout-title {
+  color: var(--ink);
+  font-family: ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+  font-weight: 700;
+}
+
 .section {
   padding: 1rem 0;
   border-top: 1px solid var(--line);
