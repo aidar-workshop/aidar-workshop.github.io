@@ -163,11 +163,25 @@ ul {
 }
 
 .people-strip.invited {
-  grid-template-columns: repeat(4, minmax(0, 1fr));
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+.people-strip.invited figure {
+  width: 200px;
+}
+
+.people-strip.advisors {
+  grid-template-columns: repeat(3, minmax(0, 150px));
+  justify-content: center;
+  max-width: 560px;
+  margin: 0 auto;
 }
 
 .people-strip.panelists {
-  grid-template-columns: repeat(6, minmax(0, 1fr));
+  grid-template-columns: repeat(2, minmax(0, 200px));
+  justify-content: center;
   max-width: 900px;
   margin: 0 auto;
 }
@@ -242,6 +256,14 @@ ul {
   color: var(--muted);
   font-family: ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
   font-size: 0.85rem;
+  text-align: center;
+}
+
+.people-note {
+  margin: 0 0 0.7rem;
+  color: var(--muted);
+  font-family: ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+  font-size: 0.78rem;
   text-align: center;
 }
 
@@ -430,7 +452,8 @@ footer p:last-child {
 
   .people-strip.invited,
   .people-strip.panelists,
-  .people-strip.organizers {
+  .people-strip.organizers,
+  .people-strip.advisors {
     grid-template-columns: repeat(2, minmax(0, 1fr));
   }
 
