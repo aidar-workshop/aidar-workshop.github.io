@@ -180,10 +180,15 @@ ul {
 }
 
 .people-strip.panelists {
-  grid-template-columns: repeat(2, minmax(0, 200px));
+  display: flex;
+  flex-wrap: wrap;
   justify-content: center;
   max-width: 900px;
   margin: 0 auto;
+}
+
+.people-strip.panelists figure {
+  width: 200px;
 }
 
 .people-strip.organizers {
