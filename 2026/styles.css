@@ -131,15 +131,21 @@ ul {
 }
 
 .abstract-block {
-  max-width: 900px;
-  margin: 0 auto;
-  padding: 0.8rem 0 0.7rem;
+  padding: 0.9rem 0 0.8rem;
   border-top: 1px solid var(--line);
   border-bottom: 1px solid var(--line);
 }
 
 .abstract-block h2 {
   text-align: center;
+}
+
+.abstract-block p {
+  margin-bottom: 0.7rem;
+}
+
+.abstract-block p:last-child {
+  margin-bottom: 0;
 }
 
 .people-block {
