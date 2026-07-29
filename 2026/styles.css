@@ -173,10 +173,15 @@ ul {
 }
 
 .people-strip.advisors {
-  grid-template-columns: repeat(3, minmax(0, 150px));
+  display: flex;
+  flex-wrap: wrap;
   justify-content: center;
-  max-width: 560px;
+  max-width: 720px;
   margin: 0 auto;
+}
+
+.people-strip.advisors figure {
+  width: 150px;
 }
 
 .people-strip.panelists {
