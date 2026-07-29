@@ -24,7 +24,7 @@
         <nav class="quick-links" aria-label="Page sections">
           <a href="#dates">Dates</a>
           <a href="#speakers">Speakers</a>
-          <a href="#topics">Topics</a>
+          <a href="#details">Workshop details</a>
           <a href="#cfp">Call for papers</a>
           <a href="#schedule">Schedule</a>
           <a href="#organizers">Organizers</a>
@@ -60,6 +60,7 @@
         </p>
         <div class="cfp-cta">
           <a class="button" href="https://openreview.net/group?id=NeurIPS.cc/2026/Workshop/AIDaR">Submit on OpenReview</a>
+          <a class="button button-secondary" href="https://forms.gle/3hchvfrCoApG6D9E9">Join the reviewer pool</a>
         </div>
       </section>
 
@@ -67,30 +68,15 @@
         <h2>Overview</h2>
         <p>
           Scientific AI is moving from curated prediction tasks toward
-          <strong>systems that work directly with experimental data</strong>.
-          Foundation models, retrieval systems, and agents are being asked to use
-          experimental data, query scientific knowledge, run analyses, and
-          support follow-up decisions. <strong>Scientific data must remain
-          connected to samples, assays, protocols, measurements, workflow
-          outputs, and the context needed to interpret results</strong> outside
-          the lab or notebook where the data was produced.
-        </p>
-        <p>
-          AIDaR focuses on <strong>two problems</strong> in this transition.
-          First, <strong>how should scientific data be organized so models and
-          agents can use it</strong>: from raw measurements and analysis-ready
-          files to relational or graph-structured knowledge, multimodal
-          biomedical measurements, workflow systems, and large industrial
-          datasets used for model training and wet-lab feedback? Second,
-          <strong>how should evaluations determine where frontier models are
-          reliable</strong>: across biological reasoning, practical data
-          analysis, retrieval over structured scientific knowledge,
-          assay-specific workflows, and deployed scientific AI systems?
-        </p>
-        <p>
-          AIDaR brings together <strong>researchers, industry scientists, and
-          engineers</strong> building scientific data systems, foundation models,
-          agents, biomedical evaluations, and industrial assay platforms.
+          <strong>systems that work directly with experimental data</strong>:
+          foundation models, retrieval systems, and agents that query scientific
+          knowledge, run analyses, and support follow-up decisions. AIDaR focuses
+          on two problems in this transition &mdash; <strong>how scientific data
+          should be organized so models and agents can use it</strong>, and
+          <strong>how evaluations should determine where frontier models are
+          reliable</strong>. The workshop brings together researchers, industry
+          scientists, and engineers building scientific data systems, foundation
+          models, agents, biomedical evaluations, and industrial assay platforms.
         </p>
       </section>
 
@@ -129,49 +115,52 @@
         </div>
       </section>
 
-      <section class="section two-col" id="topics">
-        <div>
-          <h2>Workshop topics</h2>
-          <h3>Data infrastructure for scientific AI</h3>
-          <p>
-            Scientific data must move from raw measurements into forms that
-            models, retrieval systems, and agents can use. This includes linking
-            files to samples and assay conditions, preserving the steps that
-            produced an analysis-ready dataset, representing scientific
-            relationships as tables, graphs, or knowledge networks, and exposing
-            data through tools that scientists and agents can both use.
-          </p>
-          <p>
-            Topics include scientific foundation models, relational and
-            graph-structured data, multimodal biomedical measurements, workflow
-            systems, and large industrial datasets used for model training and
-            wet-lab feedback.
-          </p>
+      <section class="section" id="details">
+        <h2>Workshop details</h2>
+        <div class="two-col">
+          <div>
+            <h3>Data infrastructure for scientific AI</h3>
+            <p>
+              Scientific data must move from raw measurements into forms that
+              models, retrieval systems, and agents can use: linking files to
+              samples and assay conditions, preserving the steps that produced an
+              analysis-ready dataset, and representing scientific relationships as
+              tables, graphs, or knowledge networks. Topics include scientific
+              foundation models, relational and graph-structured data, multimodal
+              biomedical measurements, workflow systems, and large industrial
+              datasets used for model training and wet-lab feedback.
+            </p>
+          </div>
+          <div>
+            <h3>Evaluations for scientific AI</h3>
+            <p>
+              Scientific AI systems should be tested on tasks that resemble real
+              scientific work: choosing inputs, running analyses, checking
+              controls, interpreting noisy results, and recovering biological or
+              physical conclusions from data. Topics include biological reasoning,
+              practical data analysis, retrieval over structured scientific
+              knowledge, multimodal biomedical data, failure analysis, and studies
+              of where performance changes across assays, platforms, or workflows.
+            </p>
+          </div>
         </div>
-        <div>
-          <h2 class="spacer">Workshop topics</h2>
-          <h3>Evaluations for scientific AI</h3>
-          <p>
-            Scientific AI systems should be tested on tasks that resemble real
-            scientific work: choosing inputs, running analyses, checking controls,
-            interpreting noisy results, and recovering biological or physical
-            conclusions from data.
-          </p>
-          <p>
-            Topics include biological reasoning, practical data analysis,
-            retrieval over structured scientific knowledge, multimodal biomedical
-            data, failure analysis, and studies of where performance changes
-            across assays, platforms, workflows, or data organization.
-          </p>
+
+        <h3 class="details-format-heading">Format</h3>
+        <div class="program-grid" id="program">
+          <p><strong>Structure.</strong> Short invited talks, central contributed work, poster and demo sessions, and breakout groups that produce short written outputs for the post-workshop report.</p>
+          <p><strong>Talks.</strong> Invited talks open with scientific data systems and ground the evaluation discussions in biomedical data.</p>
+          <p><strong>Panels.</strong> Panel 1 focuses on practical biology evaluations. Panel 2 focuses on assay data systems: sample metadata, raw instrument data, analysis-ready files, workflow inputs and outputs, version history, and scientist-facing interfaces.</p>
+          <p><strong>Breakouts.</strong> Breakouts focus on large perturbation datasets, multiplexed in vivo screens, tissue-foundry systems, model training, and wet-lab feedback, with expected participation from industry partners.</p>
         </div>
       </section>
 
       <section class="section" id="cfp">
         <h2>Call for papers</h2>
         <p class="cfp-lead">
-          We welcome <strong>short papers (up to 4 pages)</strong> and
-          <strong>full papers (up to 8 pages)</strong>, excluding references and
-          appendices.
+          We invite technical papers, benchmarks and evaluations, data-system
+          reports, workflow and tool demos, and failure analyses. Submissions
+          should connect data organization or evaluation design to downstream
+          model or agent behavior on scientific tasks.
         </p>
         <p class="cfp-submit-link">
           <a href="https://openreview.net/group?id=NeurIPS.cc/2026/Workshop/AIDaR">Submit on OpenReview</a>
@@ -180,13 +169,7 @@
         </p>
         <div class="two-col">
           <div>
-            <h3>What to submit</h3>
-            <p>
-              We invite technical papers, benchmarks and evaluations,
-              data-system reports, workflow and tool demos, and failure analyses.
-              Submissions should connect data organization or evaluation design
-              to downstream model or agent behavior on scientific tasks.
-            </p>
+            <h3>Submission types</h3>
             <p>
               <strong>Full papers (up to 8 pages)</strong> present complete work:
               a scientific data system, benchmark, or evaluation, with methods,
@@ -199,21 +182,10 @@
             </p>
           </div>
           <div>
-            <h3>Topics of interest</h3>
-            <ul class="key-list">
-              <li><strong>Data infrastructure:</strong> AI-operable experimental data, graph-structured scientific knowledge, multimodal biomedical measurements, workflow systems, and large industrial datasets.</li>
-              <li><strong>Evaluations:</strong> biological reasoning, practical data analysis, retrieval, agent tasks, assay-specific workflows, and deployed scientific AI systems.</li>
-            </ul>
-          </div>
-        </div>
-        <div class="cfp-formatting">
-          <h3>Formatting and review</h3>
-          <div class="two-col">
+            <h3>Formatting and review</h3>
             <ul class="key-list">
               <li>Papers must use the <a href="https://neurips.cc/Conferences/2026/CallForPapers">NeurIPS 2026 style files</a>; references and appendices are excluded from the page limit.</li>
               <li>Reviewing is double-blind; anonymize the submission and any linked material.</li>
-            </ul>
-            <ul class="key-list">
               <li>Disclose any use of large language models and their role.</li>
               <li>The workshop is non-archival.</li>
             </ul>
@@ -225,26 +197,19 @@
         <h2>Tentative schedule</h2>
         <table>
           <tbody>
-            <tr><td>08:45</td><td>Arrival, question wall, opening remarks, COI/LLM policies, and workshop topics.</td></tr>
-            <tr><td>09:10</td><td>Invited talks. AI-operable data for foundation models, discovery platforms, relational data, and structured scientific knowledge.</td></tr>
-            <tr><td>10:30</td><td>Contributed spotlights: scientific data systems and practical evaluations.</td></tr>
-            <tr><td>11:20</td><td>Panel 1: Benchmarking AI on practical biology. Evaluations that approximate biological reasoning and practical data-analysis tasks.</td></tr>
-            <tr><td>12:00</td><td>Poster/demo session 1 and lunch.</td></tr>
-            <tr><td>13:15</td><td>Invited talks. Biomedical data, assay design, sample context, treatment conditions, multimodal measurements, biological signal, and reproducibility.</td></tr>
-            <tr><td>14:00</td><td>Contributed spotlights: analysis histories and deployment lessons.</td></tr>
-            <tr><td>14:50</td><td>Poster/demo session 2 and coffee.</td></tr>
-            <tr><td>15:40</td><td>Breakout groups: AI-facing data infrastructure for large industrial datasets.</td></tr>
-            <tr><td>16:25</td><td>Panel 2: Engineering AI-operable assay data systems. Panelists discuss sample metadata, raw instrument data, analysis-ready files, workflow inputs and outputs, version history, and scientist-facing interfaces.</td></tr>
-            <tr><td>17:05</td><td>Breakout report-out, community roadmap, closing remarks, and post-workshop report plan.</td></tr>
+            <tr><td>08:45</td><td>Arrival and opening remarks</td></tr>
+            <tr><td>09:10</td><td>Invited talks: data infrastructure for scientific AI</td></tr>
+            <tr><td>10:30</td><td>Contributed spotlights</td></tr>
+            <tr><td>11:20</td><td>Panel 1: Benchmarking AI on practical biology</td></tr>
+            <tr><td>12:00</td><td>Poster and demo session, lunch</td></tr>
+            <tr><td>13:15</td><td>Invited talks: biomedical data and evaluation</td></tr>
+            <tr><td>14:00</td><td>Contributed spotlights</td></tr>
+            <tr><td>14:50</td><td>Poster and demo session, coffee</td></tr>
+            <tr><td>15:40</td><td>Breakout groups</td></tr>
+            <tr><td>16:25</td><td>Panel 2: Building assay data systems for AI</td></tr>
+            <tr><td>17:05</td><td>Breakout report-out and closing remarks</td></tr>
           </tbody>
         </table>
-
-        <div class="program-grid" id="program">
-          <p><strong>Format.</strong> Short invited talks, central contributed work, poster/demo sessions, and breakout groups that produce short written outputs for the post-workshop report.</p>
-          <p><strong>Talks.</strong> Invited talks open with AI-operable scientific data systems and ground the evaluation discussions in biomedical data.</p>
-          <p><strong>Panels.</strong> Panel 1 focuses on practical biology evaluations. Panel 2 focuses on assay data systems: sample metadata, raw instrument data, analysis-ready files, workflow inputs and outputs, version history, and scientist-facing interfaces.</p>
-          <p><strong>Breakouts.</strong> Breakouts focus on large perturbation datasets, multiplexed in vivo screens, tissue-foundry systems, model training, and wet-lab feedback, with expected participation from industry partners.</p>
-        </div>
       </section>
 
       <section class="section organizer-section" id="organizers">
@@ -275,7 +240,7 @@
             <figcaption><strong><a href="https://www.linkedin.com/in/arindam-sett-7325708/">Arindam Sett</a></strong><span>Roche / Genentech</span></figcaption>
           </figure>
           <figure>
-            <img src="assets/organizers/sina-booeshaghi.webp" alt="Sina Booeshaghi">
+            <img src="assets/organizers/sina-booeshaghi.jpg" alt="Sina Booeshaghi">
             <figcaption><strong><a href="https://www.sina.bio/">Sina Booeshaghi</a></strong><span>UC Berkeley</span></figcaption>
           </figure>
         </div>

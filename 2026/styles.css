@@ -314,10 +314,10 @@ ul {
 
 .cfp-cta {
   display: flex;
-  flex-direction: column;
+  flex-wrap: wrap;
   align-items: center;
   justify-content: center;
-  gap: 0.7rem;
+  gap: 0.6rem;
   margin-top: 0.9rem;
   text-align: center;
 }
@@ -356,6 +356,20 @@ ul {
 
 .button:hover {
   background: #26595c;
+}
+
+.button-secondary {
+  border: 1px solid var(--accent);
+  background: transparent;
+  color: var(--accent);
+}
+
+.button-secondary:hover {
+  background: var(--wash);
+}
+
+.details-format-heading {
+  margin-top: 1.1rem;
 }
 
 .dates-note {
