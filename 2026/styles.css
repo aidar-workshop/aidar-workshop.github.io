@@ -333,6 +333,11 @@ ul {
   font-weight: 700;
 }
 
+.cfp-link-sep {
+  margin: 0 0.5rem;
+  color: var(--muted);
+}
+
 .cfp-formatting {
   margin-top: 1.1rem;
 }
