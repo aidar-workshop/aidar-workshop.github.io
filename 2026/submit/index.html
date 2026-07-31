@@ -1,0 +1,128 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Submit your work: AIDaR at NeurIPS 2026</title>
+    <meta
+      name="description"
+      content="How to submit to the AIDaR workshop at NeurIPS 2026: a required OpenReview submission, plus AIDaRS, an optional pilot that adds a checked, machine-readable copy for reproducibility and more detailed review."
+    >
+    <link rel="stylesheet" href="../styles.css">
+  </head>
+  <body>
+    <main class="page">
+      <header class="hero" id="top">
+        <p class="kicker">NeurIPS 2026 Workshop</p>
+        <h1>Submit your work</h1>
+        <p class="tagline">OpenReview is required. AIDaRS is an optional pilot.</p>
+        <nav class="quick-links" aria-label="Page sections">
+          <a href="../">Workshop home</a>
+          <a href="#flow">How to submit</a>
+          <a href="#about">About AIDaRS</a>
+        </nav>
+      </header>
+
+      <section class="abstract-block" id="intro">
+        <p>
+          <strong>Submission to OpenReview is required</strong> for every AIDaR
+          workshop paper. We are also piloting AIDaRS, an optional
+          machine-readable submission that helps reviewers reproduce your work
+          and give more precise feedback. If you choose to participate, the
+          process is straightforward.
+        </p>
+      </section>
+
+      <section class="section flow" id="flow" aria-label="Required workshop submission and optional AIDaRS pilot">
+        <div class="step step-one">
+          <span class="step-label">Required</span>
+          <strong>1. Submit your paper to OpenReview</strong>
+          <p class="step-action">
+            <a class="button" href="https://openreview.net/group?id=NeurIPS.cc/2026/Workshop/AIDaR">Submit to OpenReview</a>
+          </p>
+        </div>
+
+        <div class="step step-two">
+          <span class="step-label">Optional pilot</span>
+          <strong>2. Submit your work to AIDaRS</strong>
+          <p>Add a checked, machine-readable copy for:</p>
+          <ul class="benefits" aria-label="Benefits of AIDaRS submission">
+            <li>Reproducibility</li>
+            <li>More fine-grained review</li>
+          </ul>
+        </div>
+
+        <div class="step step-three">
+          <span class="step-label">Optional pilot</span>
+          <strong>3. Check and respond to AIDaRS reviews</strong>
+          <p>
+            If you participate, use the <code>aidar</code> tool to fetch and
+            respond to reviews.
+            <a href="https://github.com/NeurIPS2026-AIDaR/submission-kit">Learn about the tool and system on GitHub.</a>
+          </p>
+        </div>
+
+        <div class="paths" aria-label="Submission options">
+          <article class="path">
+            <h3>Command line</h3>
+            <p>Run one standalone client from your terminal. It checks a temporary copy and leaves your project unchanged.</p>
+            <a href="https://github.com/NeurIPS2026-AIDaR/submission-kit#submit">View CLI instructions</a>
+          </article>
+          <article class="path">
+            <h3>AI agent</h3>
+            <p>Copy this prompt into your AI agent and replace <code>PATH</code> with your project folder.</p>
+            <div class="agent-prompt">
+              <pre id="agent-prompt-text">Install the submit-to-aidar skill from https://github.com/NeurIPS2026-AIDaR/submission-kit/tree/main/skills/submit-to-aidar and use it to submit my project at PATH.</pre>
+              <button class="copy-agent" type="button" data-copy="agent-prompt-text">Copy</button>
+            </div>
+          </article>
+          <article class="path">
+            <h3>Browser upload</h3>
+            <p>Select a project folder and complete the same submission flow without installing a client.</p>
+            <a href="https://submityour.work/">Upload in browser</a>
+          </article>
+        </div>
+      </section>
+
+      <section class="section" id="about">
+        <h2>About AIDaRS</h2>
+        <p>
+          AIDaRS is an optional reviewer-anonymous pilot that complements the
+          required OpenReview submission with a checked, machine-readable copy
+          for reproducibility and more detailed feedback. Authors can expect
+          local privacy checks, no retained project files on the server, private
+          versioned review on GitHub, and the ability to read and answer reviews
+          with the <code>aidar</code> tool.
+          <a href="https://github.com/NeurIPS2026-AIDaR/submission-kit/raw/main/docs/AIDAR_TECHNICAL_REPORT.pdf">Read the proposal (PDF).</a>
+        </p>
+      </section>
+    </main>
+
+    <footer>
+      <p class="footer-contact">
+        <a href="mailto:aidar.neurips.2026.paris@gmail.com">aidar.neurips.2026.paris@gmail.com</a>
+      </p>
+      <p class="footer-links">
+        <a href="https://www.linkedin.com/company/aidar-workshop-at-neurips-2026-paris/about/">LinkedIn</a>
+        <a href="https://x.com/aidarneurips26p">X</a>
+        <a href="https://bsky.app/profile/aidar-neurips2026.bsky.social">Bluesky</a>
+      </p>
+      <p><a href="../">AIDaR at NeurIPS 2026</a></p>
+    </footer>
+
+    <script>
+      document.querySelectorAll(".copy-agent").forEach(function (button) {
+        button.addEventListener("click", function () {
+          var source = document.getElementById(button.dataset.copy);
+          navigator.clipboard.writeText(source.textContent.trim()).then(function () {
+            var label = button.textContent;
+            button.textContent = "Copied";
+            setTimeout(function () {
+              button.textContent = label;
+            }, 1500);
+          });
+        });
+      });
+    </script>
+  </body>
+</html>

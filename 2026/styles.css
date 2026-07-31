@@ -378,6 +378,153 @@ ul {
   margin-top: 1.1rem;
 }
 
+code {
+  font-family: ui-monospace, SFMono-Regular, Menlo, Consolas, monospace;
+  font-size: 0.88em;
+}
+
+/* Submission flow: the required step stands alone; the optional pilot
+   (steps two and three) sits above the routes and shares its top edge. */
+.flow {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  grid-template-areas:
+    "one two three"
+    ".   paths paths";
+  gap: 0 0.9rem;
+}
+
+.step {
+  min-width: 0;
+  padding: 0.85rem 1rem 0.95rem;
+  border: 1px solid var(--line);
+}
+
+.step-one {
+  grid-area: one;
+}
+
+.step-two {
+  grid-area: two;
+}
+
+.step-three {
+  grid-area: three;
+}
+
+.step-label {
+  display: block;
+  margin-bottom: 0.5rem;
+  color: var(--accent);
+  font-family: ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+  font-size: 0.66rem;
+  font-weight: 700;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+}
+
+.step strong {
+  display: block;
+  margin-bottom: 0.4rem;
+  font-size: 1.02rem;
+  line-height: 1.3;
+}
+
+.step p {
+  margin-bottom: 0;
+  color: var(--muted);
+}
+
+.step-action {
+  margin: 0.75rem 0 0;
+}
+
+.benefits {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0 1.1rem;
+  margin: 0.4rem 0 0;
+  padding: 0;
+  color: var(--muted);
+  list-style: none;
+}
+
+.benefits li + li {
+  position: relative;
+}
+
+.benefits li + li::before {
+  position: absolute;
+  left: -0.65rem;
+  content: "\00b7";
+}
+
+.paths {
+  display: grid;
+  grid-area: paths;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 0.9rem;
+  margin-top: -1px;
+  padding: 1rem;
+  border: 1px solid var(--line);
+}
+
+.path {
+  min-width: 0;
+}
+
+.path h3 {
+  margin: 0 0 0.3rem;
+}
+
+.path p {
+  color: var(--muted);
+}
+
+.path > :last-child {
+  margin-bottom: 0;
+}
+
+.agent-prompt {
+  display: flex;
+  align-items: stretch;
+  width: 100%;
+  min-width: 0;
+  max-width: 100%;
+  margin-top: 0.5rem;
+  border: 1px solid var(--line);
+}
+
+.agent-prompt pre {
+  flex: 1;
+  min-width: 0;
+  margin: 0;
+  padding: 0.5rem 0.55rem;
+  font: 0.72rem/1.4 ui-monospace, SFMono-Regular, Menlo, Consolas, monospace;
+  white-space: pre;
+  overflow-x: auto;
+  scrollbar-width: thin;
+}
+
+.copy-agent {
+  flex: none;
+  padding: 0 0.6rem;
+  border: 0;
+  border-left: 1px solid var(--line);
+  background: none;
+  color: var(--accent);
+  font-family: ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+  font-size: 0.66rem;
+  font-weight: 700;
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
+  cursor: pointer;
+}
+
+.copy-agent:hover {
+  text-decoration: underline;
+}
+
 .dates-note {
   margin-top: 0.4rem;
   color: var(--muted);
@@ -479,6 +626,25 @@ footer p:last-child {
   .two-col,
   .program-grid {
     grid-template-columns: 1fr;
+  }
+
+  .flow {
+    grid-template-columns: 1fr;
+    grid-template-areas:
+      "one"
+      "two"
+      "paths"
+      "three";
+    row-gap: 0.9rem;
+  }
+
+  .step-one {
+    margin-bottom: 0.9rem;
+  }
+
+  .paths {
+    grid-template-columns: 1fr;
+    margin-bottom: 0.9rem;
   }
 
   .date-grid {
