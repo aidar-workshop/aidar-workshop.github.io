@@ -175,7 +175,7 @@ ul {
 }
 
 .people-strip.invited figure {
-  width: 200px;
+  width: 130px;
 }
 
 .people-strip.advisors {
@@ -187,7 +187,7 @@ ul {
 }
 
 .people-strip.advisors figure {
-  width: 150px;
+  width: 130px;
 }
 
 .people-strip.panelists {
@@ -199,7 +199,7 @@ ul {
 }
 
 .people-strip.panelists figure {
-  width: 200px;
+  width: 130px;
 }
 
 .people-strip.organizers {
