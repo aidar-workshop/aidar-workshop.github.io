@@ -1,6 +1,10 @@
 <!doctype html>
-<!-- Source for aidar-og.png. Rendered at exactly 1200x630 by build_og.sh.
-     Edit here, re-run that script, never hand-edit the PNG. -->
+<!-- Source for both share cards, rendered at exactly 1200x630 by build_og.sh:
+       (no query)      -> aidar-og.png         the clean card
+       ?variant=lineup -> aidar-og-lineup.png  the same card carrying the programme
+
+     One source, two variants, so the wordmark and typography can never drift
+     apart between them. Edit here, re-run that script, never hand-edit a PNG. -->
 <html lang="en">
   <head>
     <meta charset="utf-8">
@@ -69,7 +73,7 @@
       .wordmark .tower {
         display: block;
         width: 0.71em;
-        height: 0.7em;      /* cap height of the following letters */
+        height: 0.7em;      /* cap height of the letters that follow */
         margin-right: 0.008em;
       }
 
@@ -106,6 +110,71 @@
       }
 
       .footline b { color: var(--ink); font-weight: 700; }
+
+      /* The programme only exists on the lineup variant. */
+      .programme { display: none; }
+
+      /* The lineup has a fixed 630px to hold ten portraits as well as the
+         lockup, so everything above the programme is stepped down and the
+         affiliations come off — the names are what people scan for. */
+      body.lineup .plate { justify-content: flex-start; padding-top: 40px; }
+      body.lineup .kicker { margin-bottom: 14px; font-size: 16px; }
+      body.lineup .wordmark { font-size: 84px; }
+      body.lineup .rule { margin: 14px 0 11px; width: 100px; }
+      body.lineup .tagline { font-size: 22px; }
+      body.lineup .programme { display: block; width: 100%; margin-top: 20px; }
+      body.lineup .where { display: none; }
+
+      .group + .group { margin-top: 14px; }
+
+      .group h2 {
+        margin: 0 0 8px;
+        color: var(--accent);
+        font-family: ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+        font-size: 12px;
+        font-weight: 700;
+        letter-spacing: 0.16em;
+        text-transform: uppercase;
+      }
+
+      .strip {
+        display: flex;
+        justify-content: center;
+        gap: 14px;
+      }
+
+      .strip figure { width: 78px; margin: 0; }
+
+      /* Matches the portraits on the site: hairline, 8px radius, square crop. */
+      .strip img {
+        display: block;
+        width: 100%;
+        aspect-ratio: 1 / 1;
+        border: 1px solid var(--line);
+        border-radius: 8px;
+        object-fit: cover;
+        background: var(--wash);
+        filter: saturate(0.96);
+      }
+
+      .strip figcaption {
+        margin-top: 6px;
+        color: var(--ink);
+        font-family: ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+        font-size: 12px;
+        font-weight: 600;
+        line-height: 1.2;
+      }
+
+      .strip .where {
+        display: block;
+        margin-top: 1px;
+        color: var(--muted);
+        font-weight: 400;
+      }
+
+      .panelists figure { width: 70px; }
+      .panelists figcaption { font-size: 11px; }
     </style>
   </head>
   <body>
@@ -116,10 +185,71 @@
       </h1>
       <div class="rule"></div>
       <p class="tagline">AI Data Readiness for Scientific Discovery</p>
+
+      <div class="programme">
+        <div class="group">
+          <h2>Invited speakers</h2>
+          <div class="strip">
+            <figure>
+              <img src="../speakers/max-welling.jpg" alt="">
+              <figcaption>Max Welling<span class="where">University of Amsterdam</span></figcaption>
+            </figure>
+            <figure>
+              <img src="../speakers/marianna-rapsomaniki.webp" alt="">
+              <figcaption>Marianna Rapsomaniki<span class="where">University of Lausanne</span></figcaption>
+            </figure>
+            <figure>
+              <img src="../speakers/arjun-raj.jpg" alt="">
+              <figcaption>Arjun Raj<span class="where">Cellular Intelligence</span></figcaption>
+            </figure>
+            <figure>
+              <img src="../speakers/xinyi-zhang.jpg" alt="">
+              <figcaption>Xinyi Zhang<span class="where">Aithyra</span></figcaption>
+            </figure>
+          </div>
+        </div>
+
+        <div class="group panelists">
+          <h2>Panelists</h2>
+          <div class="strip">
+            <figure>
+              <img src="../panelists/harihara-muralidharan.jpg" alt="">
+              <figcaption>Harihara Muralidharan<span class="where">LatchBio</span></figcaption>
+            </figure>
+            <figure>
+              <img src="../panelists/kexin-huang.jpg" alt="">
+              <figcaption>Kexin Huang<span class="where">Phylo / Biomni</span></figcaption>
+            </figure>
+            <figure>
+              <img src="../panelists/karin-hrovatin.jpg" alt="">
+              <figcaption>Karin Hrovatin<span class="where">Merck KGaA</span></figcaption>
+            </figure>
+            <figure>
+              <img src="../panelists/pablo-meyer-rojas.jpg" alt="">
+              <figcaption>Pablo Meyer Rojas<span class="where">IBM Research</span></figcaption>
+            </figure>
+            <figure>
+              <img src="../panelists/jon-laurent.webp" alt="">
+              <figcaption>Jon Laurent<span class="where">Edison Scientific</span></figcaption>
+            </figure>
+            <figure>
+              <img src="../panelists/stefan-harrer.jpg" alt="">
+              <figcaption>Stefan Harrer<span class="where">Sanofi</span></figcaption>
+            </figure>
+          </div>
+        </div>
+      </div>
+
       <div class="footline">
         <span><b>Paris</b> &middot; December 2026</span>
         <span>Data infrastructure &middot; Evaluations</span>
       </div>
     </div>
+    <script>
+      // build_og.sh renders this file twice, switching variant by query string.
+      if (new URLSearchParams(location.search).get('variant') === 'lineup') {
+        document.body.classList.add('lineup');
+      }
+    </script>
   </body>
 </html>

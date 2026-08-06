@@ -22,18 +22,24 @@ server=$!
 trap 'kill "$server" 2>/dev/null || true' EXIT
 sleep 1.5
 
-"$chrome" \
-  --headless \
-  --disable-gpu \
-  --hide-scrollbars \
-  --force-device-scale-factor=2 \
-  --window-size=1200,630 \
-  --screenshot="$out" \
-  --virtual-time-budget=4000 \
-  "http://127.0.0.1:$port/2026/assets/brand/og-card.html" >/dev/null 2>&1
+lineup="$here/aidar-og-lineup.png"
 
-[ -s "$out" ] || { echo "render produced no file" >&2; exit 1; }
-echo "wrote $out"
+render() {  # render <output> <query>
+  "$chrome" \
+    --headless \
+    --disable-gpu \
+    --hide-scrollbars \
+    --force-device-scale-factor=2 \
+    --window-size=1200,630 \
+    --screenshot="$1" \
+    --virtual-time-budget=5000 \
+    "http://127.0.0.1:$port/2026/assets/brand/og-card.html$2" >/dev/null 2>&1
+  [ -s "$1" ] || { echo "render produced no file: $1" >&2; exit 1; }
+  echo "wrote $1"
+}
+
+render "$out" ""                        # clean
+render "$lineup" "?variant=lineup"      # carrying the programme
 
 # iOS home-screen icon: 180x180, rendered straight from the favicon.
 touch_icon="$repo_root/apple-touch-icon.png"
