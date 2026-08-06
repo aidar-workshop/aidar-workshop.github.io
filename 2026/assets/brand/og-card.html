@@ -30,65 +30,71 @@
       /* The plate: a hairline frame inset from the trim, as a figure in a journal. */
       .plate {
         position: relative;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
         width: 100%;
         height: 100%;
-        padding: 54px 64px;
+        padding: 64px;
         border: 1px solid var(--line);
-        background:
-          linear-gradient(180deg, #fff 0%, var(--wash) 100%);
+        background: linear-gradient(180deg, #fff 0%, var(--wash) 100%);
         outline: 14px solid #fff;
         outline-offset: -14px;
-      }
-
-      .grid {
-        display: grid;
-        grid-template-columns: 1fr 360px;
-        align-items: center;
-        column-gap: 56px;
-        height: 100%;
+        text-align: center;
       }
 
       .kicker {
-        margin: 0 0 22px;
+        margin: 0 0 30px;
         color: var(--accent);
         font-family: ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
-        font-size: 17px;
+        font-size: 18px;
         font-weight: 700;
-        letter-spacing: 0.16em;
+        letter-spacing: 0.2em;
         text-transform: uppercase;
       }
 
+      /* The lockup: the A is the Eiffel Tower, so the I beside it reads AI. */
       .wordmark {
+        display: flex;
+        align-items: baseline;
+        justify-content: center;
         margin: 0;
-        font-size: 148px;
+        font-size: 172px;
         font-weight: 400;
-        line-height: 0.9;
-        letter-spacing: -0.022em;
+        line-height: 1;
+        letter-spacing: -0.02em;
       }
 
-      /* The lowercase a is the acronym's own signal: AI + Data + Readiness. */
+      .wordmark .tower {
+        display: block;
+        width: 0.71em;
+        height: 0.7em;      /* cap height of the following letters */
+        margin-right: 0.008em;
+      }
+
+      .wordmark .tower img { display: block; width: 100%; height: 100%; }
+
       .wordmark .lower { font-style: italic; }
 
       .rule {
-        width: 132px;
+        width: 148px;
         height: 2px;
-        margin: 26px 0 24px;
+        margin: 34px 0 26px;
         background: var(--accent-deep);
       }
 
       .tagline {
-        max-width: 15.5ch;
         margin: 0;
-        color: var(--ink);
-        font-size: 41px;
-        line-height: 1.14;
+        font-size: 40px;
+        line-height: 1.15;
         letter-spacing: -0.01em;
       }
 
       .footline {
         position: absolute;
         right: 64px;
-        bottom: 48px;
+        bottom: 46px;
         left: 64px;
         display: flex;
         justify-content: space-between;
@@ -100,32 +106,20 @@
       }
 
       .footline b { color: var(--ink); font-weight: 700; }
-
-      .mark { width: 360px; height: 360px; }
-      .mark svg { display: block; width: 100%; height: 100%; }
     </style>
   </head>
   <body>
     <div class="plate">
-      <div class="grid">
-        <div>
-          <p class="kicker">NeurIPS 2026 Workshop</p>
-          <h1 class="wordmark">AID<span class="lower">a</span>R</h1>
-          <div class="rule"></div>
-          <p class="tagline">AI Data Readiness for Scientific Discovery</p>
-        </div>
-        <div class="mark" id="mark"></div>
-      </div>
+      <p class="kicker">NeurIPS 2026 Workshop</p>
+      <h1 class="wordmark">
+        <span class="tower"><img src="aidar-a.svg" alt=""></span>ID<span class="lower">a</span>R
+      </h1>
+      <div class="rule"></div>
+      <p class="tagline">AI Data Readiness for Scientific Discovery</p>
       <div class="footline">
         <span><b>Paris</b> &middot; December 2026</span>
         <span>Data infrastructure &middot; Evaluations</span>
       </div>
     </div>
-    <script>
-      // Inlined at build time so the PNG never depends on a second request.
-      fetch('aidar-mark.svg')
-        .then(r => r.text())
-        .then(svg => { document.getElementById('mark').innerHTML = svg; });
-    </script>
   </body>
 </html>
