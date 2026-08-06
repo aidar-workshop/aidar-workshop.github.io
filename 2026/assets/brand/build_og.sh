@@ -55,3 +55,23 @@ touch_icon="$repo_root/apple-touch-icon.png"
 
 [ -s "$touch_icon" ] || { echo "apple-touch-icon render produced no file" >&2; exit 1; }
 echo "wrote $touch_icon"
+
+# Stamp the card's content hash into og:image / twitter:image.
+#
+# Scrapers (LinkedIn, X, Slack, Facebook) cache by image URL and will happily
+# serve bytes they fetched weeks ago. The filename stays put across rebuilds, so
+# without this the card changes and every feed keeps showing the old one.
+ver="$(shasum -a 256 "$out" | cut -c1-8)"
+base="https://aidar-workshop.github.io/2026/assets/brand/aidar-og.png"
+for f in "$repo_root/2026/index.html" "$repo_root/index.html"; do
+  python3 - "$f" "$base" "$ver" <<'PY'
+import re, sys
+path, base, ver = sys.argv[1:4]
+with open(path) as fh:
+    html = fh.read()
+html = re.sub(re.escape(base) + r'(\?v=[0-9a-f]+)?', f'{base}?v={ver}', html)
+with open(path, 'w') as fh:
+    fh.write(html)
+PY
+done
+echo "stamped og:image ?v=$ver"
