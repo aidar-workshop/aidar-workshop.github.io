@@ -14,14 +14,14 @@
          first image in the document, which is whichever speaker leads the page.
 
          Two cards are built from assets/brand/og-card.html:
-           aidar-og.png         the clean card, used here — it holds at the 320px
-                                Slack and mobile render as well as at 500px
-           aidar-og-lineup.png  the same card carrying the invited speakers, for
-                                posts where it renders large; the names go
-                                illegible below about 400px, so attach it by hand
-                                rather than pointing og:image at it.
-         Swap the two og:image and twitter:image URLs to change which one a
-         shared link picks up. -->
+           aidar-og-lineup.png  the invited speakers, used here — the names go
+                                illegible below about 400px, so a Slack or mobile
+                                unfurl reads as the wordmark plus four faces
+           aidar-og.png         the clean card, wordmark only, legible at every
+                                size; use it if the programme card ever dates
+         The ?v= is the card's own content hash, stamped by build_og.sh so a
+         rebuilt card is never served from a scraper's cache. Switch the default
+         in that script, not here — it rewrites these tags on every build. -->
     <meta property="og:type" content="website">
     <meta property="og:site_name" content="AIDaR">
     <meta property="og:url" content="https://aidar-workshop.github.io/2026/">
@@ -30,13 +30,13 @@
       property="og:description"
       content="A NeurIPS 2026 workshop in Paris on how scientific data should be organized for models and agents, and how evaluations should determine where frontier models are reliable."
     >
-    <meta property="og:image" content="https://aidar-workshop.github.io/2026/assets/brand/aidar-og.png?v=873d624a">
+    <meta property="og:image" content="https://aidar-workshop.github.io/2026/assets/brand/aidar-og-lineup.png?v=6f8cf782">
     <meta property="og:image:type" content="image/png">
     <meta property="og:image:width" content="2400">
     <meta property="og:image:height" content="1260">
     <meta
       property="og:image:alt"
-      content="AIDaR, set with the Eiffel Tower as its A, above the line AI Data Readiness for Scientific Discovery."
+      content="AIDaR, set with the Eiffel Tower as its A, above portraits of the four invited speakers: Max Welling, Marianna Rapsomaniki, Arjun Raj and Xinyi Zhang."
     >
     <meta name="twitter:card" content="summary_large_image">
     <meta name="twitter:title" content="AIDaR: AI Data Readiness for Scientific Discovery">
@@ -44,7 +44,7 @@
       name="twitter:description"
       content="A NeurIPS 2026 workshop in Paris on scientific data infrastructure and evaluations for reliable scientific AI systems."
     >
-    <meta name="twitter:image" content="https://aidar-workshop.github.io/2026/assets/brand/aidar-og.png?v=873d624a">
+    <meta name="twitter:image" content="https://aidar-workshop.github.io/2026/assets/brand/aidar-og-lineup.png?v=6f8cf782">
 
     <link rel="icon" href="/favicon.svg" type="image/svg+xml">
     <link rel="apple-touch-icon" href="/apple-touch-icon.png">
