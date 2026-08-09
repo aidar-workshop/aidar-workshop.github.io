@@ -18,43 +18,22 @@ cover.
 - `aidar-a.svg` — the A alone, to set beside live type
 - built by `build_logo.py`
 
-## The companion mark
+## The square forms
 
-A knowledge graph: loose measurements at the left taken up into a structured
-graph at the right.
+The cover carries type only, so the square is where the identity lives — which
+means it is the wordmark itself rather than a companion to it. A stranger
+landing on the Page needs to know whose it is.
 
-- **SCIENCE** the loose points are measurements
-- **DATA** the nodes are those measurements, kept
-- **READY** the transformation — the dashed edge is a point in the act of being
-  taken up, which is what readiness is
-- **AI** the graph
-
-The graph is not borrowed from the neural-network cliché: the workshop's own
-call names "tables, graphs, or knowledge networks" and "relational and
-graph-structured data" as its subject. Drawn sparse and asymmetric it reads as a
-knowledge graph, not a layered perceptron.
-
-Use it wherever there is only a square and no room for the name.
-
-- `aidar-avatar.svg` / `.png` — full form, **48px and up**, with the name set
-  beneath it
-- `/favicon.svg` — reduced form, **32px and under**, graph only
-- built by `build_avatar.py`
-
-### Why two forms
-
-A tab icon is drawn at 16px. At that size the full graph closes up into a
-smudge: the loose points vanish and the edges merge. The reduced form keeps the
-shape and drops what cannot survive — the loose points, the dashed edge, and two
-nodes. Same mark, not a different one.
-
-### Why the full form carries the name
+- `aidar-avatar.svg` / `.png` — the lockup: tower, name, rule. **48px and up**,
+  for the LinkedIn Page logo and the iOS touch icon
+- `/favicon.svg` — the tower alone, set larger than it sits in the lockup.
+  **32px and under**; the name is unreadable at 16px and the browser tab prints
+  the page title beside it anyway
+- built by `build_avatar.py`, which imports the tower's geometry from
+  `build_logo.py` so the A in the logo and the A in the wordmark cannot drift
 
 LinkedIn draws a Page logo at roughly 150px on desktop, not the 56px a feed
-suggests, so there is room for the name and a mark that names itself is more use
-to a stranger than one that does not. The `a` is italic, exactly as in the
-wordmark. The name is dropped from the reduced form because it is unreadable at
-16px and the browser tab already shows the page title beside it.
+suggests, which is why the name fits there at all.
 
 Note that the name in `aidar-avatar.svg` is live text in Georgia. The exported
 PNG bakes it, so the PNG is what should be uploaded anywhere the viewer's fonts
@@ -76,6 +55,17 @@ and rejected.
 | `--accent` | `#2f6f73` |
 | `--accent-deep` | `#26595c` |
 
+## The cover
+
+Type only: the title, a rule, and where and when. No mark — the logo is drawn
+over the cover at ~150px and carries the identity, so repeating it here said the
+same thing twice and cost the type its size.
+
+Everything sits clear of the left fifth of the cover, which the logo covers
+entirely. A left-hand flank was tried and vanished behind it.
+
+- `aidar-linkedin-banner.jpg`, built from `banner.html` by `build_og.sh`
+
 ## Retired
 
 - **AI monogram** — the tower-A plus a drawn I, formerly the favicon. A third
@@ -84,6 +74,14 @@ and rejected.
 - **Radar plate** — a circular dial on the twelve avenues of the Place de
   l'Étoile. It punned on the acronym (AIDaR / RADAR) and depicted nothing about
   data.
+- **Knowledge graph** — measurements resolving into a lattice. A good answer to
+  a question that stopped existing: it was drawn so the square would not repeat
+  the tower the cover was carrying. Once the cover became type only, nothing
+  repeated, and a mark whose one remaining home was a 16px favicon is drift.
+- **Croissant and escargot graphs** — a node layout shaped as a crescent, and
+  one on the clockwise spiral of the twenty arrondissements. The escargot is a
+  real fact about Paris and drew well; the cover reads better with nothing on
+  it.
 
 ## Building
 

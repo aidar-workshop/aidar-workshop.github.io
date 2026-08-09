@@ -2,19 +2,16 @@
 <!-- Source for aidar-linkedin-banner.jpg, rendered by build_og.sh at 2100x350
      and a 2x device scale, giving LinkedIn's recommended 4200x700.
 
-     LinkedIn's own image spec drives the layout: the cover "might be adjusted
-     to fit the screen, which might trim the image horizontally or vertically",
-     they ask for limited text, and key details are to be kept away from the
-     edges and especially out of the lower-right corner. So everything sits in
-     one centred lockup inside the middle ~70% of the width, and the corners
-     carry nothing — a crop from any side eats background first.
+     Type only. The wordmark moved into the Page logo, which is drawn over the
+     cover at ~150px and is where a stranger looks to find out whose page this
+     is — so the cover no longer needs to carry it, and nothing is said twice.
+     What is left is the one thing the page title does not say (what AIDaR
+     stands for) and the one thing worth repeating (where and when).
 
-     The workshop, place and date sit in the flanks rather than under the
-     tagline. Stacked, they cost the wordmark its size; out at the sides they
-     cost nothing, because the core lockup only spans 45% of a 6:1 cover and the
-     rest was empty. They are also the expendable half — a narrow crop eats the
-     flanks first and leaves the wordmark and the tagline, which is the right
-     way round.
+     LinkedIn's spec drives the rest: the cover "might be adjusted to fit the
+     screen, which might trim the image horizontally or vertically", they ask
+     for limited text, and key details belong away from the edges. The block
+     sits clear of the left fifth, which the logo covers entirely.
 
      Edit here, re-run build_og.sh, never hand-edit the JPEG. -->
 <html lang="en">
@@ -52,90 +49,48 @@
          centre crop takes the tower-A off the front of the word and truncates
          the tagline. Stacked, the widest line is under half the width and the
          whole thing survives the crop. */
-      .lockup {
-        display: flex;
-        flex-direction: column;
-        align-items: center;
-        margin-top: -7px;
-        text-align: center;
+
+      .copy {
+        position: absolute;
+        left: 620px;
+        top: 50%;
+        transform: translateY(-50%);
+        max-width: 1180px;
       }
 
-      /* The A is the Eiffel Tower, so the I beside it reads AI. Same metrics as
-         the share cards, so the mark is identical across every surface. */
-      .wordmark {
-        display: flex;
-        align-items: baseline;
-        margin: 0;
-        font-size: 210px;
-        font-weight: 400;
-        line-height: 1;
-        letter-spacing: -0.02em;
+      .title {
+        margin: 0 0 24px;
+        font-size: 92px;
+        line-height: 1.08;
+        letter-spacing: -0.016em;
       }
 
-      .wordmark .tower {
-        display: block;
-        width: 0.71em;
-        height: 0.7em;      /* cap height of the letters that follow */
-        margin-right: 0.008em;
-      }
-
-      .wordmark .tower img { display: block; width: 100%; height: 100%; }
-
-      .wordmark .lower { font-style: italic; }
-
-      .divider {
-        width: 140px;
+      .rule {
+        width: 132px;
         height: 3px;
-        margin: 15px 0 13px;
+        margin: 0 0 24px;
         background: var(--accent-deep);
       }
 
-      .tagline {
+      .det {
         margin: 0;
-        font-size: 52px;
-        line-height: 1.1;
-        letter-spacing: -0.01em;
-      }
-
-      .details {
-        margin: 0;
+        font-family: ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+        font-size: 29px;
+        font-weight: 700;
+        letter-spacing: 0.15em;
+        text-transform: uppercase;
         color: var(--accent);
-        font-family: ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
-        font-size: 23px;
-        font-weight: 700;
-        letter-spacing: 0.15em;
-        text-transform: uppercase;
       }
 
-      /* Secondary information, out where the width is going spare. */
-      .flank {
-        position: absolute;
-        top: 50%;
-        transform: translateY(-50%);
-        font-family: ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
-        font-size: 26px;
-        font-weight: 700;
-        line-height: 1.55;
-        letter-spacing: 0.15em;
-        text-transform: uppercase;
-      }
-
-      .flank-right { right: 176px; text-align: right; }
-
-      .flank .lead { color: var(--accent); display: block; }
-      .flank .sub { color: var(--muted); display: block; }
+      .det .sep { color: var(--line); margin: 0 14px; }
+      .det .p { color: var(--muted); }
     </style>
   </head>
   <body>
-    <p class="flank flank-right">
-      <span class="lead">NeurIPS 2026</span><span class="sub">Paris</span><span class="sub">December 2026</span>
-    </p>
-    <div class="lockup">
-      <h1 class="wordmark">
-        <span class="tower"><img src="aidar-a.svg" alt=""></span>ID<span class="lower">a</span>R
-      </h1>
-      <div class="divider"></div>
-      <p class="tagline">AI Data Readiness for Scientific Discovery</p>
+    <div class="copy">
+      <h1 class="title">AI Data Readiness<br>for Scientific Discovery</h1>
+      <div class="rule"></div>
+      <p class="det">NeurIPS 2026 Workshop<span class="sep">&middot;</span><span class="p">Paris &middot; December 2026</span></p>
     </div>
   </body>
 </html>
