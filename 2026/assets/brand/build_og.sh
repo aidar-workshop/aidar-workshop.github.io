@@ -82,6 +82,30 @@ if [ "$banner_bytes" -gt 3000000 ]; then
 fi
 echo "wrote $banner ($((banner_bytes / 1024))KB)"
 
+# LinkedIn Page logo: 400x400 recommended, 268x268 minimum.
+avatar="$here/aidar-avatar.png"
+"$chrome" \
+  --headless \
+  --disable-gpu \
+  --hide-scrollbars \
+  --force-device-scale-factor=1 \
+  --window-size=400,400 \
+  --screenshot="$avatar" \
+  --virtual-time-budget=2500 \
+  "http://127.0.0.1:$port/2026/assets/brand/avatar.html" >/dev/null 2>&1
+
+[ -s "$avatar" ] || { echo "avatar render produced no file" >&2; exit 1; }
+
+# Assert on the exported pixels, not on the SVG. The first export looked right
+# in every HTML preview and was clipped off the right edge in the actual file.
+report=$("$chrome" --headless --disable-gpu --virtual-time-budget=4000 --dump-dom \
+  "http://127.0.0.1:$port/2026/assets/brand/check-avatar.html" 2>/dev/null \
+  | grep -o '<title>.*</title>' | sed 's/<[^>]*>//g')
+case "$report" in
+  *'"clipped":[]'*) echo "wrote $avatar  $report" ;;
+  *) echo "avatar is clipped or unreadable: $report" >&2; exit 1 ;;
+esac
+
 # Stamp the default card's content hash into og:image / twitter:image.
 #
 # Scrapers (LinkedIn, X, Slack, Facebook) cache by image URL and will happily
