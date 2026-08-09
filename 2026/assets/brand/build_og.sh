@@ -56,6 +56,32 @@ touch_icon="$repo_root/apple-touch-icon.png"
 [ -s "$touch_icon" ] || { echo "apple-touch-icon render produced no file" >&2; exit 1; }
 echo "wrote $touch_icon"
 
+# LinkedIn Page cover: 4200x700 is both their minimum and their recommended
+# size, and they ask for "a high-resolution JPEG instead of a PNG", capped at
+# 3MB. Rendered at 2100x350 with a 2x scale to land exactly on it.
+banner_png="$here/.banner.tmp.png"
+banner="$here/aidar-linkedin-banner.jpg"
+"$chrome" \
+  --headless \
+  --disable-gpu \
+  --hide-scrollbars \
+  --force-device-scale-factor=2 \
+  --window-size=2100,350 \
+  --screenshot="$banner_png" \
+  --virtual-time-budget=4000 \
+  "http://127.0.0.1:$port/2026/assets/brand/banner.html" >/dev/null 2>&1
+
+[ -s "$banner_png" ] || { echo "banner render produced no file" >&2; exit 1; }
+sips -s format jpeg -s formatOptions 88 "$banner_png" --out "$banner" >/dev/null 2>&1
+rm -f "$banner_png"
+
+banner_bytes=$(stat -f%z "$banner")
+if [ "$banner_bytes" -gt 3000000 ]; then
+  echo "banner is ${banner_bytes}b, over LinkedIn's 3MB cap" >&2
+  exit 1
+fi
+echo "wrote $banner ($((banner_bytes / 1024))KB)"
+
 # Stamp the default card's content hash into og:image / twitter:image.
 #
 # Scrapers (LinkedIn, X, Slack, Facebook) cache by image URL and will happily

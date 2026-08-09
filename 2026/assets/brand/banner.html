@@ -1,0 +1,118 @@
+<!doctype html>
+<!-- Source for aidar-linkedin-banner.jpg, rendered by build_og.sh at 2100x350
+     and a 2x device scale, giving LinkedIn's recommended 4200x700.
+
+     LinkedIn's own image spec drives the layout: the cover "might be adjusted
+     to fit the screen, which might trim the image horizontally or vertically",
+     they ask for limited text, and key details are to be kept away from the
+     edges and especially out of the lower-right corner. So everything sits in
+     one centred lockup inside the middle ~70% of the width, and the corners
+     carry nothing — a crop from any side eats background first.
+
+     Edit here, re-run build_og.sh, never hand-edit the JPEG. -->
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <style>
+      :root {
+        --ink: #202124;
+        --muted: #5f6368;
+        --line: #d8dadd;
+        --wash: #f7f8f8;
+        --accent: #2f6f73;
+        --accent-deep: #26595c;
+      }
+
+      * { box-sizing: border-box; }
+
+      html, body { margin: 0; padding: 0; }
+
+      body {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        width: 2100px;
+        height: 350px;
+        overflow: hidden;
+        background: linear-gradient(180deg, #fff 0%, var(--wash) 100%);
+        color: var(--ink);
+        font-family: ui-serif, Georgia, Cambria, "Times New Roman", Times, serif;
+      }
+
+      /* Stacked rather than side by side, and nudged up off the lower edge.
+         A side-by-side lockup is about 65% of the width, so a narrow-screen
+         centre crop takes the tower-A off the front of the word and truncates
+         the tagline. Stacked, the widest line is under half the width and the
+         whole thing survives the crop. */
+      .lockup {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        margin-top: -18px;
+        text-align: center;
+      }
+
+      /* The A is the Eiffel Tower, so the I beside it reads AI. Same metrics as
+         the share cards, so the mark is identical across every surface. */
+      .wordmark {
+        display: flex;
+        align-items: baseline;
+        margin: 0;
+        font-size: 132px;
+        font-weight: 400;
+        line-height: 1;
+        letter-spacing: -0.02em;
+      }
+
+      .wordmark .tower {
+        display: block;
+        width: 0.71em;
+        height: 0.7em;      /* cap height of the letters that follow */
+        margin-right: 0.008em;
+      }
+
+      .wordmark .tower img { display: block; width: 100%; height: 100%; }
+
+      .wordmark .lower { font-style: italic; }
+
+      .divider {
+        width: 104px;
+        height: 2px;
+        margin: 20px 0 16px;
+        background: var(--accent-deep);
+      }
+
+      .tagline {
+        margin: 0 0 14px;
+        font-size: 44px;
+        line-height: 1.1;
+        letter-spacing: -0.01em;
+      }
+
+      .details {
+        margin: 0;
+        color: var(--accent);
+        font-family: ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+        font-size: 21px;
+        font-weight: 700;
+        letter-spacing: 0.15em;
+        text-transform: uppercase;
+      }
+
+      .details .sep { color: var(--line); margin: 0 10px; }
+      .details .place { color: var(--muted); }
+    </style>
+  </head>
+  <body>
+    <div class="lockup">
+      <h1 class="wordmark">
+        <span class="tower"><img src="aidar-a.svg" alt=""></span>ID<span class="lower">a</span>R
+      </h1>
+      <div class="divider"></div>
+      <p class="tagline">AI Data Readiness for Scientific Discovery</p>
+      <p class="details">
+        NeurIPS 2026 Workshop<span class="sep">&middot;</span><span class="place">Paris, December 2026</span>
+      </p>
+    </div>
+  </body>
+</html>
