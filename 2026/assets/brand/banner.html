@@ -9,9 +9,12 @@
      one centred lockup inside the middle ~70% of the width, and the corners
      carry nothing — a crop from any side eats background first.
 
-     The workshop/place/date line that used to sit under the tagline is gone:
-     LinkedIn prints exactly that beneath the cover, so on this surface it only
-     cost the wordmark its size.
+     The workshop, place and date sit in the flanks rather than under the
+     tagline. Stacked, they cost the wordmark its size; out at the sides they
+     cost nothing, because the core lockup only spans 45% of a 6:1 cover and the
+     rest was empty. They are also the expendable half — a narrow crop eats the
+     flanks first and leaves the wordmark and the tagline, which is the right
+     way round.
 
      Edit here, re-run build_og.sh, never hand-edit the JPEG. -->
 <html lang="en">
@@ -32,6 +35,7 @@
       html, body { margin: 0; padding: 0; }
 
       body {
+        position: relative;
         display: flex;
         align-items: center;
         justify-content: center;
@@ -103,11 +107,29 @@
         text-transform: uppercase;
       }
 
-      .details .sep { color: var(--line); margin: 0 10px; }
-      .details .place { color: var(--muted); }
+      /* Secondary information, out where the width is going spare. */
+      .flank {
+        position: absolute;
+        top: 50%;
+        transform: translateY(-50%);
+        font-family: ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+        font-size: 26px;
+        font-weight: 700;
+        line-height: 1.55;
+        letter-spacing: 0.15em;
+        text-transform: uppercase;
+      }
+
+      .flank-right { right: 176px; text-align: right; }
+
+      .flank .lead { color: var(--accent); display: block; }
+      .flank .sub { color: var(--muted); display: block; }
     </style>
   </head>
   <body>
+    <p class="flank flank-right">
+      <span class="lead">NeurIPS 2026</span><span class="sub">Paris</span><span class="sub">December 2026</span>
+    </p>
     <div class="lockup">
       <h1 class="wordmark">
         <span class="tower"><img src="aidar-a.svg" alt=""></span>ID<span class="lower">a</span>R
