@@ -20,6 +20,14 @@ Ink on white, because the banner is ink on white: its only teal is a 104px rule
 and one line of small caps, so a teal-dominant tile sits beside it as a
 different brand.
 
+Two forms of the one mark, because a tab icon is drawn at 16px and the full
+graph turns to a smudge there — the loose points disappear and the edges close
+up. The reduced form keeps the shape and drops everything that cannot survive:
+the loose points, the dashed edge, and two nodes.
+
+  full     >= 48px   LinkedIn avatar, touch icon
+  reduced  <= 32px   favicon
+
 Node positions are written out rather than generated. A scatter that has to
 look deliberately irregular is easier to place by hand than to tune a hash into.
 
@@ -64,6 +72,40 @@ def fmt(v):
 
 def px(pt):
     return pt[0] * SIZE, (pt[1] + Y_NUDGE) * SIZE
+
+
+# The reduced form: four nodes, three edges, drawn heavy.
+MIN_NODES = {
+    "a": (0.30, 0.26),
+    "b": (0.56, 0.46),
+    "c": (0.28, 0.72),
+    "d": (0.78, 0.74),
+}
+MIN_EDGES = (("a", "b"), ("b", "c"), ("b", "d"))
+MIN_NODE_R = 46.0
+MIN_EDGE_W = 26.0
+
+
+def build_reduced():
+    out = [
+        f'<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 {fmt(SIZE)} '
+        f'{fmt(SIZE)}" role="img" aria-label="AIDaR">',
+        f'  <rect width="{fmt(SIZE)}" height="{fmt(SIZE)}" fill="#ffffff"/>',
+    ]
+    for a, b in MIN_EDGES:
+        x1, y1 = MIN_NODES[a][0] * SIZE, MIN_NODES[a][1] * SIZE
+        x2, y2 = MIN_NODES[b][0] * SIZE, MIN_NODES[b][1] * SIZE
+        out.append(
+            f'  <line x1="{fmt(x1)}" y1="{fmt(y1)}" x2="{fmt(x2)}" y2="{fmt(y2)}" '
+            f'stroke="{INK}" stroke-width="{fmt(MIN_EDGE_W)}" stroke-linecap="round"/>'
+        )
+    for x, y in MIN_NODES.values():
+        out.append(
+            f'  <circle cx="{fmt(x * SIZE)}" cy="{fmt(y * SIZE)}" '
+            f'r="{fmt(MIN_NODE_R)}" fill="{INK}"/>'
+        )
+    out.append("</svg>")
+    return "\n".join(out) + "\n"
 
 
 def build():
@@ -114,5 +156,9 @@ def build():
 
 if __name__ == "__main__":
     here = Path(__file__).resolve().parent
+    repo_root = here.parents[2]
     (here / "aidar-avatar.svg").write_text(build())
+    # The favicon is the same mark, reduced — not a separate one.
+    (repo_root / "favicon.svg").write_text(build_reduced())
     print(f"wrote {here / 'aidar-avatar.svg'}")
+    print(f"wrote {repo_root / 'favicon.svg'}  (reduced)")
