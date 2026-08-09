@@ -36,8 +36,9 @@ knowledge graph, not a layered perceptron.
 
 Use it wherever there is only a square and no room for the name.
 
-- `aidar-avatar.svg` / `.png` — full form, **48px and up**
-- `/favicon.svg` — reduced form, **32px and under**
+- `aidar-avatar.svg` / `.png` — full form, **48px and up**, with the name set
+  beneath it
+- `/favicon.svg` — reduced form, **32px and under**, graph only
 - built by `build_avatar.py`
 
 ### Why two forms
@@ -46,6 +47,18 @@ A tab icon is drawn at 16px. At that size the full graph closes up into a
 smudge: the loose points vanish and the edges merge. The reduced form keeps the
 shape and drops what cannot survive — the loose points, the dashed edge, and two
 nodes. Same mark, not a different one.
+
+### Why the full form carries the name
+
+LinkedIn draws a Page logo at roughly 150px on desktop, not the 56px a feed
+suggests, so there is room for the name and a mark that names itself is more use
+to a stranger than one that does not. The `a` is italic, exactly as in the
+wordmark. The name is dropped from the reduced form because it is unreadable at
+16px and the browser tab already shows the page title beside it.
+
+Note that the name in `aidar-avatar.svg` is live text in Georgia. The exported
+PNG bakes it, so the PNG is what should be uploaded anywhere the viewer's fonts
+are unknown.
 
 ## Colour
 

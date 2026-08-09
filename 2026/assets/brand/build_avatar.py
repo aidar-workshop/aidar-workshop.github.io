@@ -25,8 +25,12 @@ graph turns to a smudge there — the loose points disappear and the edges close
 up. The reduced form keeps the shape and drops everything that cannot survive:
 the loose points, the dashed edge, and two nodes.
 
-  full     >= 48px   LinkedIn avatar, touch icon
-  reduced  <= 32px   favicon
+  full     >= 48px   LinkedIn avatar, touch icon — carries the name, because at
+                     the ~150px LinkedIn actually draws a Page logo there is
+                     room for it, and a mark that names itself is more use to a
+                     stranger than one that does not
+  reduced  <= 32px   favicon — graph only; the name is unreadable at 16px and
+                     the tab already shows the page title beside it
 
 Node positions are written out rather than generated. A scatter that has to
 look deliberately irregular is easier to place by hand than to tune a hash into.
@@ -42,6 +46,11 @@ MUTED = "#9aa0a6"
 SIZE = 400.0
 NODE_R = 16.0
 EDGE_W = 6.5
+
+# With the name set beneath it, the graph gives up the lower band of the square.
+GRAPH_SCALE = 0.78
+NAME_SIZE = 0.145          # of the square
+NAME_BASELINE = 0.945
 
 # The hand-placed cloud sits low in the square; nudged so the ink is optically
 # centred. check-avatar.html reports the margins the build actually produced.
@@ -71,7 +80,10 @@ def fmt(v):
 
 
 def px(pt):
-    return pt[0] * SIZE, (pt[1] + Y_NUDGE) * SIZE
+    """Scaled about the centre, then lifted to leave the name its band."""
+    x = (0.5 + (pt[0] - 0.5) * GRAPH_SCALE) * SIZE
+    y = (0.5 + (pt[1] + Y_NUDGE - 0.5) * GRAPH_SCALE - 0.085) * SIZE
+    return x, y
 
 
 # The reduced form: four nodes, three edges, drawn heavy.
@@ -150,6 +162,13 @@ def build():
             f'  <circle cx="{fmt(x)}" cy="{fmt(y)}" r="{fmt(NODE_R)}" fill="{INK}"/>'
         )
 
+    # The name. The a is italic, exactly as in the wordmark.
+    out.append(
+        f'  <text x="{fmt(SIZE / 2)}" y="{fmt(SIZE * NAME_BASELINE)}" '
+        f'text-anchor="middle" font-family="Georgia, ui-serif, serif" '
+        f'font-size="{fmt(SIZE * NAME_SIZE)}" fill="{INK}" '
+        'letter-spacing="-0.5">AID<tspan font-style="italic">a</tspan>R</text>'
+    )
     out.append("</svg>")
     return "\n".join(out) + "\n"
 
