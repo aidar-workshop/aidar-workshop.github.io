@@ -106,5 +106,6 @@ From LinkedIn's own image-specifications article, not the numbers blogs repeat:
 | | |
 | --- | --- |
 | Page cover | 4200 × 700, JPEG preferred, 3MB cap |
+| Page logo, as drawn | ~150px on desktop, ~56px in feeds |
 | Page logo | 400 × 400 recommended, 268 × 268 minimum |
 | Share card | 1200 × 630, rendered at 2× |

@@ -9,6 +9,10 @@
      one centred lockup inside the middle ~70% of the width, and the corners
      carry nothing — a crop from any side eats background first.
 
+     The workshop/place/date line that used to sit under the tagline is gone:
+     LinkedIn prints exactly that beneath the cover, so on this surface it only
+     cost the wordmark its size.
+
      Edit here, re-run build_og.sh, never hand-edit the JPEG. -->
 <html lang="en">
   <head>
@@ -48,7 +52,7 @@
         display: flex;
         flex-direction: column;
         align-items: center;
-        margin-top: -14px;
+        margin-top: -7px;
         text-align: center;
       }
 
@@ -58,7 +62,7 @@
         display: flex;
         align-items: baseline;
         margin: 0;
-        font-size: 168px;
+        font-size: 210px;
         font-weight: 400;
         line-height: 1;
         letter-spacing: -0.02em;
@@ -78,13 +82,13 @@
       .divider {
         width: 140px;
         height: 3px;
-        margin: 13px 0 11px;
+        margin: 15px 0 13px;
         background: var(--accent-deep);
       }
 
       .tagline {
-        margin: 0 0 11px;
-        font-size: 48px;
+        margin: 0;
+        font-size: 52px;
         line-height: 1.1;
         letter-spacing: -0.01em;
       }
@@ -110,9 +114,6 @@
       </h1>
       <div class="divider"></div>
       <p class="tagline">AI Data Readiness for Scientific Discovery</p>
-      <p class="details">
-        NeurIPS 2026 Workshop<span class="sep">&middot;</span><span class="place">Paris, December 2026</span>
-      </p>
     </div>
   </body>
 </html>
