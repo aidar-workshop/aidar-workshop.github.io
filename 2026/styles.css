@@ -185,9 +185,8 @@ ul {
 }
 
 .people-block {
-  /* 980px is the width the organizers row already runs at: seven 130px
-     portraits across. The panelists row reached seven too, and at 900px the
-     block clipped it to six plus an orphan. */
+  /* 980px is the width the organizers row runs at: seven 130px portraits
+     across. */
   max-width: 980px;
   margin: 0.75rem auto 0.95rem;
 }
@@ -229,14 +228,20 @@ ul {
   width: 130px;
 }
 
-/* Seven across, the same grid as the organizers row. Wrapping flex dropped the
-   seventh panelist onto a row of its own as soon as the container fell below
-   ~972px; a fixed seven-column grid narrows the portraits instead, and the
-   780px rule below already expects these strips to be grids. */
+/* Eleven panelists cannot hold one row at a legible portrait size, so the strip
+   wraps like the invited and advisors strips do. 900px fits six across, which
+   splits the eleven into centered rows of six and five instead of a full row
+   plus a short orphan. */
 .people-strip.panelists {
-  grid-template-columns: repeat(7, minmax(0, 1fr));
-  max-width: 980px;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  max-width: 900px;
   margin: 0 auto;
+}
+
+.people-strip.panelists figure {
+  width: 130px;
 }
 
 .people-strip.organizers {
