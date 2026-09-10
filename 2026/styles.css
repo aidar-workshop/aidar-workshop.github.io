@@ -368,7 +368,17 @@ ul {
 }
 
 .cfp-lead {
+  margin: 0 0 0.35rem;
+}
+
+/* Takes the slot the submit links used to hold, and their weight — a reader
+   scanning the call needs to hit this before the submission types. */
+.cfp-closed {
   margin: 0 0 1rem;
+  font-family: ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+  font-size: 0.85rem;
+  font-weight: 700;
+  color: var(--muted);
 }
 
 .cfp-formatting {
