@@ -360,30 +360,15 @@ ul {
   color: var(--muted);
 }
 
-.cfp-cta {
-  display: flex;
-  flex-wrap: wrap;
-  align-items: center;
-  justify-content: center;
-  gap: 0.6rem;
-  margin-top: 0.9rem;
-  text-align: center;
+/* A date that has passed. The line-through is on the <s> in the markup; this
+   only drops the contrast, so a lapsed cell reads as background information
+   beside the live ones rather than competing with them. */
+.date-passed {
+  color: var(--muted);
 }
 
 .cfp-lead {
-  margin: 0 0 0.35rem;
-}
-
-.cfp-submit-link {
   margin: 0 0 1rem;
-  font-family: ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
-  font-size: 0.85rem;
-  font-weight: 700;
-}
-
-.cfp-link-sep {
-  margin: 0 0.5rem;
-  color: var(--muted);
 }
 
 .cfp-formatting {
