@@ -228,15 +228,18 @@ ul {
   width: 130px;
 }
 
-/* Eleven panelists cannot hold one row at a legible portrait size, so the strip
-   wraps like the invited and advisors strips do. 900px fits six across, which
-   splits the eleven into centered rows of six and five instead of a full row
-   plus a short orphan. */
+/* Thirteen panelists cannot hold one row at a legible portrait size, so the
+   strip wraps like the invited and advisors strips do. The width is chosen to
+   keep the last row from being a short orphan, and so has to be revisited each
+   time the count changes: at 900px, which fitted six across and split eleven
+   into six and five, thirteen came out as six, six and one. 980px fits seven —
+   the width the organizers row already runs at — splitting thirteen into seven
+   and six. */
 .people-strip.panelists {
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
-  max-width: 900px;
+  max-width: 980px;
   margin: 0 auto;
 }
 
