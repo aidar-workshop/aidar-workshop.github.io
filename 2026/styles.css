@@ -565,8 +565,19 @@ code {
   text-decoration: underline;
 }
 
-.dates-note {
-  margin-top: 0.4rem;
+/* The page's only remaining action, in the slot the submit buttons used to
+   hold — and centred, as they were. Ruled off above because it concerns
+   NeurIPS registration rather than any date of ours. */
+.reg-note {
+  margin-top: 0.85rem;
+  padding-top: 0.8rem;
+  border-top: 1px solid var(--line);
+  text-align: center;
+}
+
+.reg-note p {
+  margin: 0 auto 0.7rem;
+  max-width: 34rem;
   color: var(--muted);
   font-size: 0.85rem;
 }

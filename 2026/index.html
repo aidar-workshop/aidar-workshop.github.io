@@ -78,19 +78,20 @@
 
       <section class="section key-dates" id="dates">
         <h2>Key dates</h2>
+        <!-- A date that has gone by is struck rather than deleted: a reader
+             holding the old date needs to see that it is the one that lapsed.
+             <s> is the element for content no longer accurate, and .date-passed
+             drops the contrast so a lapsed cell sits behind the live ones. -->
         <div class="date-grid">
           <div>
             <span class="date-label">Submission</span>
-            <!-- Struck rather than deleted: the deadline has passed, and a reader
-                 who has the old date in hand needs to see that it is the one that
-                 lapsed. <s> is the element for content no longer accurate. -->
             <span class="date-value date-passed"><s>September 5, 2026</s></span>
             <span class="date-sub date-passed"><s>11:59 p.m. AoE</s></span>
           </div>
           <div>
             <span class="date-label">Notification</span>
-            <span class="date-value">September 29, 2026</span>
-            <span class="date-sub">11:59 p.m. AoE</span>
+            <span class="date-value date-passed"><s>September 29, 2026</s></span>
+            <span class="date-sub date-passed"><s>11:59 p.m. AoE</s></span>
           </div>
           <div>
             <span class="date-label">Camera-ready</span>
@@ -102,9 +103,17 @@
             <span class="date-sub">Paris, France</span>
           </div>
         </div>
-        <p class="dates-note">
-          The camera-ready date will be announced.
-        </p>
+        <!-- Registration is NeurIPS's, not ours, and it has sold out — so the
+             waiting list is the one thing left for a reader to act on. It sits
+             under the dates because that is where someone works out whether
+             they can actually come. -->
+        <div class="reg-note">
+          <p>
+            General registration for NeurIPS Paris has sold out. If you haven't
+            gotten your ticket yet, sign up for the waiting list!
+          </p>
+          <a class="button" href="https://neurips-europe.cc/waiting.list-105.php">Join the waiting list</a>
+        </div>
       </section>
 
       <section class="abstract-block" id="abstract">
