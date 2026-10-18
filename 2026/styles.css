@@ -206,10 +206,15 @@ ul {
   gap: 0.65rem;
 }
 
+/* Six speakers in two rows of three, Max Welling, Xinyi Zhang and Pooja Rao
+   first. 480px fits three 130px portraits (411px with the gaps) but not four
+   (551px). */
 .people-strip.invited {
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
+  max-width: 480px;
+  margin: 0 auto;
 }
 
 .people-strip.invited figure {
