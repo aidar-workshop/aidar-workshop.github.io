@@ -114,8 +114,10 @@
       /* The programme only exists on the lineup variant. */
       .programme { display: none; }
 
-      /* Four portraits in a fixed 630px leaves room for the affiliations, so
-         the card carries who is speaking and where they are from. */
+      /* Six portraits across the 1072px inside the plate's padding: 156px each
+         with 22px gaps is 1046px. That still leaves room under them for the
+         affiliations, so the card carries who is speaking and where they are
+         from. */
       body.lineup .plate { justify-content: flex-start; padding-top: 36px; }
       body.lineup .kicker { margin-bottom: 12px; font-size: 16px; }
       body.lineup .wordmark { font-size: 132px; }
@@ -138,10 +140,10 @@
       .strip {
         display: flex;
         justify-content: center;
-        gap: 26px;
+        gap: 22px;
       }
 
-      .strip figure { width: 192px; margin: 0; }
+      .strip figure { width: 156px; margin: 0; }
 
       /* Matches the portraits on the site: hairline, 8px radius, square crop. */
       .strip img {
@@ -191,16 +193,24 @@
               <figcaption>Max Welling<span class="where">University of Amsterdam</span></figcaption>
             </figure>
             <figure>
-              <img src="../speakers/pooja-rao.jpg" alt="">
-              <figcaption>Pooja Rao<span class="where">Google Research</span></figcaption>
+              <img src="../speakers/xinyi-zhang.jpg" alt="">
+              <figcaption>Xinyi Zhang<span class="where">Aithyra</span></figcaption>
+            </figure>
+            <figure>
+              <img src="../speakers/kaeli-rizzo.jpg" alt="">
+              <figcaption>Kaeli Rizzo<span class="where">Cold Spring Harbor Laboratory</span></figcaption>
+            </figure>
+            <figure>
+              <img src="../speakers/kexin-huang.jpg" alt="">
+              <figcaption>Kexin Huang<span class="where">Phylo / Biomni</span></figcaption>
             </figure>
             <figure>
               <img src="../speakers/eric-durand.jpg" alt="">
               <figcaption>Eric Durand<span class="where">Rivercell</span></figcaption>
             </figure>
             <figure>
-              <img src="../speakers/xinyi-zhang.jpg" alt="">
-              <figcaption>Xinyi Zhang<span class="where">Aithyra</span></figcaption>
+              <img src="../speakers/pooja-rao.jpg" alt="">
+              <figcaption>Pooja Rao<span class="where">Google Research</span></figcaption>
             </figure>
           </div>
         </div>

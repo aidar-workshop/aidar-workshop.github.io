@@ -228,17 +228,15 @@ ul {
   width: 130px;
 }
 
-/* Twelve panelists cannot hold one row at a legible portrait size, so the
-   strip wraps like the invited and advisors strips do. The width is chosen to
-   keep the last row from being a short orphan, and so has to be revisited each
-   time the count changes. 900px fits six across, splitting twelve into two
-   even rows of six; 980px fits seven, which suited thirteen (seven and six)
-   but leaves twelve as seven and five. */
+/* The panelists are listed panel by panel — five on the first panel, four on
+   the second — and the width is set so each panel takes a row of its own.
+   720px fits five 130px portraits (692px with the gaps) but not six (832px).
+   The width has to be revisited whenever a panel's line-up changes. */
 .people-strip.panelists {
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
-  max-width: 900px;
+  max-width: 720px;
   margin: 0 auto;
 }
 
@@ -564,9 +562,8 @@ code {
   text-decoration: underline;
 }
 
-/* The page's only remaining action, in the slot the submit buttons used to
-   hold — and centred, as they were. Ruled off above because it concerns
-   NeurIPS registration rather than any date of ours. */
+/* Centred in the slot the submit buttons used to hold. Ruled off above because
+   it concerns NeurIPS registration rather than any date of ours. */
 .reg-note {
   margin-top: 0.85rem;
   padding-top: 0.8rem;
@@ -575,7 +572,7 @@ code {
 }
 
 .reg-note p {
-  margin: 0 auto 0.7rem;
+  margin: 0 auto;
   max-width: 34rem;
   color: var(--muted);
   font-size: 0.85rem;
@@ -620,6 +617,17 @@ td:first-child {
   width: 4.4rem;
   padding-right: 0.75rem;
   white-space: nowrap;
+}
+
+/* A panel's line-up, on its own line under the title, in the same muted sans
+   as the times, so the title reads as the session and the names as who is
+   on it. */
+.sched-people {
+  display: block;
+  margin-top: 0.12rem;
+  color: var(--muted);
+  font-family: ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+  font-size: 0.8rem;
 }
 
 .dates-table {
