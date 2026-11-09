@@ -148,6 +148,19 @@ ul {
   background: var(--wash);
 }
 
+/* A pill whose content changed after it was announced: the accent edge and
+   label mark it as news beside the pills that still stand as first given. */
+.meta .meta-update {
+  border-color: var(--accent);
+  color: var(--ink);
+}
+
+.meta-update b {
+  margin-right: 0.3rem;
+  color: var(--accent);
+  font-weight: 700;
+}
+
 .quick-links {
   display: flex;
   flex-wrap: wrap;
@@ -581,29 +594,6 @@ code {
   max-width: 34rem;
   color: var(--muted);
   font-size: 0.85rem;
-}
-
-/* A change to something already announced. The accent frame and the label set
-   it apart from the pills above it, which describe the workshop as it stands. */
-.update-note {
-  max-width: 36rem;
-  margin: -0.3rem auto 1rem;
-  padding: 0.5rem 0.8rem;
-  border: 1px solid var(--accent);
-  border-radius: 6px;
-  background: #eef5f5;
-  font-family: ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
-  font-size: 0.82rem;
-  line-height: 1.4;
-}
-
-.update-label {
-  margin-right: 0.45rem;
-  color: var(--accent);
-  font-size: 0.72rem;
-  font-weight: 700;
-  letter-spacing: 0.1em;
-  text-transform: uppercase;
 }
 
 a {
